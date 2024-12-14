@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一文了解 Python 中的 append() 与 extend()方法 &mdash; Python教程  文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7d86a446"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="一文了解 Python 中的 datetime 的基本操作" href="11.html" />
+    <link rel="prev" title="一文搞懂 Python 中的类和对象" href="1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Python教程
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.html">一文搞懂 Python 中的类和对象</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">一文了解 Python 中的 append() 与 extend()方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#append">append() 方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用 append() 在列表末尾添加元素</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">使用 append() 在列表末尾附加列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extend">extend() 方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">使用 extend() 在列表末尾附加列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">使用 extend() 将字符串附加到列表中</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">使用 extend() 将元组附加到列表中</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">一文了解 Python 中的 datetime 的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">一文了解 Python 中的下划线 “_”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">一文了解 Python 中的循环嵌套</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">一文了解 Python 中的运算符：//</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">一文了解 Python 中的转义字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">一文了解 Python 中对象的浅拷贝和深拷贝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">一文了解 Python 中分数的表示及处理方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">一文了解 “*” 星号在 Python 中的多种用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">一文搞懂 Python 中的字节字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">一文了解在 Python 中从列表中删除第一个元素的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">一文了解在 Python 中将文本文件读入列表的基本方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22.html">一文了解在 Python中 反向迭代列表的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23.html">一文掌握 Python 的按位运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24.html">一文掌握 Python 中的排序函数： sorted() 和 sort()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25.html">一文掌握在 Python 中将字符串转换为浮点数或整数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">一文搞懂在 Python 中反转字典的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">一文精通 Python 中的数值类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.html">一文精通 Python 中的条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.html">一文了解 Python 的临时文件模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.html">一文了解 Python 中 find() 和 index() 之间的区别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.html">一文了解 Python 中按条件导入模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27.html">使用一个Python 文件来运行另一个 Python 文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26.html">Python 程序统计字符串中每个单词的出现次数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python教程</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">一文了解 Python 中的 append() 与 extend()方法</li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-append-extend">
+<h1>一文了解 Python 中的 append() 与 extend()方法<a class="headerlink" href="#python-append-extend" title="Link to this heading"></a></h1>
+<p>Python 中最常用的数据结构之一是列表，列表是 Python 中最重要的工具之一。列表类似于数组，但不同之处在于列表可以保存任何数据类型，例如整数、字符串。而且，它是可变的，即可以修改。在本文中，我们将学习一些将元素添加到列表中的方法，了解 append() 与 extend() 之间的区别。</p>
+<section id="append">
+<h2>append() 方法<a class="headerlink" href="#append" title="Link to this heading"></a></h2>
+<p>python 中的 append() 方法会将一个元素添加到已创建的列表中。它不会返回新列表，而是通过在列表末尾添加一个元素来修改现有列表。</p>
+<p><strong>语法：</strong></p>
+<p>list.append(obj)</p>
+<p><strong>参数：</strong></p>
+<p>obj -- 添加到列表末尾的对象。</p>
+<p><strong>返回值：</strong></p>
+<p>该方法无返回值，但是会修改原来的列表。</p>
+</section>
+<section id="id1">
+<h2>使用 append() 在列表末尾添加元素<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>我们创建一个包含多个数字的列表 list1，使用 append() 方法在列表末尾添加了 4、5 两个元素。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>使用 append() 在列表末尾附加列表<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>我们还可以通过 append() 向列表末尾添加一个列表。</p>
+<p>下面示例中，我们创建了 list1、list2 两个列表，使用 append() 将 list2 添加到 list1。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span>
+<span class="go">[1, 2, 3, [4, 5, 6]]</span>
+</pre></div>
+</div>
+<p>从运行结果可以看到，list2 作为一个元素存在。</p>
+</section>
+<section id="extend">
+<h2>extend() 方法<a class="headerlink" href="#extend" title="Link to this heading"></a></h2>
+<p>用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。</p>
+<p><strong>语法：</strong></p>
+<p>list.extend(seq)
+<strong>参数：</strong></p>
+<p>seq -- 元素列表。</p>
+<p><strong>返回值：</strong></p>
+<p>该方法没有返回值，但会在已存在的列表中添加新的列表内容。</p>
+</section>
+<section id="id3">
+<h2>使用 extend() 在列表末尾附加列表<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>下面示例中，我们创建了 list1、list2 两个列表，使用 extend() 将 list2 添加到 list1。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span>
+<span class="go">[1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+<p>从运行结果可以看到，list2 中的所有元素作为作为独立元素添加到 list1。</p>
+</section>
+<section id="id4">
+<h2>使用 extend() 将字符串附加到列表中<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span>
+<span class="go">[1, 2, 3, &#39;p&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]</span>
+</pre></div>
+</div>
+<p>如果我们将字符串作为参数传递给 extend() 方法，因为字符串是可迭代的，extend() 方法将迭代字符串“python”中的每个字符并添加到列表。</p>
+</section>
+<section id="id5">
+<h2>使用 extend() 将元组附加到列表中<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuple1</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span>
+<span class="go">[1, 2, 3, 1, 2, 3]</span>
+</pre></div>
+</div>
+<p>同样，元组作为一个可迭代对象，可以使用 extend() 将元组每一个元素附加到列表中。</p>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="1.html" class="btn btn-neutral float-left" title="一文搞懂 Python 中的类和对象" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="11.html" class="btn btn-neutral float-right" title="一文了解 Python 中的 datetime 的基本操作" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zbxx.net。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://www.pythonhome.cn">Python之家</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

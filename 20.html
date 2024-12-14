@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一文了解在 Python 中从列表中删除第一个元素的多种方法 &mdash; Python教程  文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7d86a446"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="一文了解在 Python 中将文本文件读入列表的基本方法" href="21.html" />
+    <link rel="prev" title="一文搞懂 Python 中的字节字符串" href="2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Python教程
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.html">一文搞懂 Python 中的类和对象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">一文了解 Python 中的 append() 与 extend()方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">一文了解 Python 中的 datetime 的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">一文了解 Python 中的下划线 “_”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">一文了解 Python 中的循环嵌套</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">一文了解 Python 中的运算符：//</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">一文了解 Python 中的转义字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">一文了解 Python 中对象的浅拷贝和深拷贝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">一文了解 Python 中分数的表示及处理方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">一文了解 “*” 星号在 Python 中的多种用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">一文搞懂 Python 中的字节字符串</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">一文了解在 Python 中从列表中删除第一个元素的多种方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用切片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#del">使用 del 关键字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pop">使用 pop()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove">使用 remove()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deque">使用 deque()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">一文了解在 Python 中将文本文件读入列表的基本方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22.html">一文了解在 Python中 反向迭代列表的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23.html">一文掌握 Python 的按位运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24.html">一文掌握 Python 中的排序函数： sorted() 和 sort()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25.html">一文掌握在 Python 中将字符串转换为浮点数或整数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">一文搞懂在 Python 中反转字典的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">一文精通 Python 中的数值类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.html">一文精通 Python 中的条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.html">一文了解 Python 的临时文件模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.html">一文了解 Python 中 find() 和 index() 之间的区别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.html">一文了解 Python 中按条件导入模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27.html">使用一个Python 文件来运行另一个 Python 文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26.html">Python 程序统计字符串中每个单词的出现次数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python教程</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">一文了解在 Python 中从列表中删除第一个元素的多种方法</li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python">
+<h1>一文了解在 Python 中从列表中删除第一个元素的多种方法<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
+<p>列表是 Python 中非常有用的数据结构，可以包含浮点数、整数、字符串等。列表是可变的，可以在创建后进行更改。在本文中，我们将介绍几种从列表中删除第一个元素的方法。</p>
+<section id="id1">
+<h2>使用切片<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>切片是一种从列表中删除第一个元素的最简单方法。利用列表切片操作返回一个新列表，新列表包含除第一个元素之外的列表的所有元素。将新列表分配给原始列表。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="n">lst1</span> <span class="o">=</span> <span class="n">lst1</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<p>['world', 'I', 'love', 'python']</p>
+</section>
+<section id="del">
+<h2>使用 del 关键字<a class="headerlink" href="#del" title="Link to this heading"></a></h2>
+<p>使用 del 语句，配合索引号，删除列表中的第一个元素。它与 pop() 函数的不同之处在于它不返回已删除的元素。与切片功能也不同，不会生成新列表。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">lst1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pop">
+<h2>使用 pop()<a class="headerlink" href="#pop" title="Link to this heading"></a></h2>
+<p>pop()，接受一个索引参数并删除该索引处的元素。如果参数，则默认会删除列表的最后一个元素。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="n">lst1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="remove">
+<h2>使用 remove()<a class="headerlink" href="#remove" title="Link to this heading"></a></h2>
+<p>remove()，用于从列表中删除给定值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">lst1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lst1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="deque">
+<h2>使用 deque()<a class="headerlink" href="#deque" title="Link to this heading"></a></h2>
+<p>deque()，是 collections 库中的一项，可以创建两端都可以操作的序列，可以快速的在队列头部和尾部添加、删除元素。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+<span class="n">lst2</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+<span class="n">lst2</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<span class="n">lst1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="2.html" class="btn btn-neutral float-left" title="一文搞懂 Python 中的字节字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="21.html" class="btn btn-neutral float-right" title="一文了解在 Python 中将文本文件读入列表的基本方法" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zbxx.net。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://www.pythonhome.cn">Python之家</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

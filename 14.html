@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一文了解 Python 中的循环嵌套 &mdash; Python教程  文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7d86a446"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="一文了解 Python 中的运算符：//" href="15.html" />
+    <link rel="prev" title="一文了解 Python 中的新功能：match-case 多分支选择语句" href="13.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Python教程
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.html">一文搞懂 Python 中的类和对象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">一文了解 Python 中的 append() 与 extend()方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">一文了解 Python 中的 datetime 的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">一文了解 Python 中的下划线 “_”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">一文了解 Python 中的循环嵌套</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#for">for 循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#while">while 循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">for 循环嵌套</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">while 循环嵌套</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">一文了解 Python 中的运算符：//</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">一文了解 Python 中的转义字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">一文了解 Python 中对象的浅拷贝和深拷贝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">一文了解 Python 中分数的表示及处理方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">一文了解 “*” 星号在 Python 中的多种用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">一文搞懂 Python 中的字节字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">一文了解在 Python 中从列表中删除第一个元素的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">一文了解在 Python 中将文本文件读入列表的基本方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22.html">一文了解在 Python中 反向迭代列表的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23.html">一文掌握 Python 的按位运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24.html">一文掌握 Python 中的排序函数： sorted() 和 sort()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25.html">一文掌握在 Python 中将字符串转换为浮点数或整数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">一文搞懂在 Python 中反转字典的多种方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">一文精通 Python 中的数值类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.html">一文精通 Python 中的条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.html">一文了解 Python 的临时文件模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.html">一文了解 Python 中 find() 和 index() 之间的区别</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.html">一文了解 Python 中按条件导入模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27.html">使用一个Python 文件来运行另一个 Python 文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26.html">Python 程序统计字符串中每个单词的出现次数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python教程</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">一文了解 Python 中的循环嵌套</li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python">
+<h1>一文了解 Python 中的循环嵌套<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
+<p>Python 和其他编程语言中基本的结构之一是循环。Python 提供了两种主要的循环类型：“for”和“while”。了解如何有效地使用和嵌套这些循环对于解决各种编程问题至关重要。在本文中，我们将探究 Python 中循环嵌套的用法，并提供示例来帮助你熟练地使用循环嵌套。</p>
+<p>尽管嵌套循环没有什么特别之处，但作为初学者，它们可能看起来有点难以理解。</p>
+<section id="for">
+<h2>for 循环<a class="headerlink" href="#for" title="Link to this heading"></a></h2>
+<p>Python 中的 for 循环用于遍历序列（列表、元组、字符串或 range()）或其他任何可迭代对象。</p>
+<p>for 循环的基本语法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">循环变量</span> <span class="ow">in</span> <span class="n">序列</span><span class="p">:</span>
+    <span class="n">循环体</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="while">
+<h2>while 循环<a class="headerlink" href="#while" title="Link to this heading"></a></h2>
+<p>while 循环用于重复执行代码块。</p>
+<p>while 循环的基本语法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">条件表达式</span><span class="p">:</span>
+    <span class="n">循环体</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>for 循环嵌套<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>循环嵌套是指将一个循环放入另一个循环中。可以处理多维数据或迭代多个序列。</p>
+<p>为了演示嵌套循环的工作原理，让我们使用一个由两个循环组成的嵌套循环：一个外循环和一个内循环。</p>
+<p>for 循环嵌套的通用语法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">变量1</span> <span class="ow">in</span> <span class="n">序列1</span><span class="p">:</span>
+   <span class="k">for</span> <span class="n">变量2</span> <span class="ow">in</span> <span class="n">序列2</span><span class="p">:</span>
+      <span class="n">内循环体</span>
+   <span class="n">外循环体</span>
+</pre></div>
+</div>
+<p><strong>外循环的每次迭代都会导致内循环运行其所有迭代。在内部循环终止之前，外部循环不会运行。</strong></p>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 九九乘法表</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">x</span><span class="si">{}</span><span class="s1">=</span><span class="si">{}</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">x1</span><span class="o">=</span><span class="mi">1</span>	
+<span class="mi">2</span><span class="n">x1</span><span class="o">=</span><span class="mi">2</span>	<span class="mi">2</span><span class="n">x2</span><span class="o">=</span><span class="mi">4</span>	
+<span class="mi">3</span><span class="n">x1</span><span class="o">=</span><span class="mi">3</span>	<span class="mi">3</span><span class="n">x2</span><span class="o">=</span><span class="mi">6</span>	<span class="mi">3</span><span class="n">x3</span><span class="o">=</span><span class="mi">9</span>	
+<span class="mi">4</span><span class="n">x1</span><span class="o">=</span><span class="mi">4</span>	<span class="mi">4</span><span class="n">x2</span><span class="o">=</span><span class="mi">8</span>	<span class="mi">4</span><span class="n">x3</span><span class="o">=</span><span class="mi">12</span>	<span class="mi">4</span><span class="n">x4</span><span class="o">=</span><span class="mi">16</span>	
+<span class="mi">5</span><span class="n">x1</span><span class="o">=</span><span class="mi">5</span>	<span class="mi">5</span><span class="n">x2</span><span class="o">=</span><span class="mi">10</span>	<span class="mi">5</span><span class="n">x3</span><span class="o">=</span><span class="mi">15</span>	<span class="mi">5</span><span class="n">x4</span><span class="o">=</span><span class="mi">20</span>	<span class="mi">5</span><span class="n">x5</span><span class="o">=</span><span class="mi">25</span>	
+<span class="mi">6</span><span class="n">x1</span><span class="o">=</span><span class="mi">6</span>	<span class="mi">6</span><span class="n">x2</span><span class="o">=</span><span class="mi">12</span>	<span class="mi">6</span><span class="n">x3</span><span class="o">=</span><span class="mi">18</span>	<span class="mi">6</span><span class="n">x4</span><span class="o">=</span><span class="mi">24</span>	<span class="mi">6</span><span class="n">x5</span><span class="o">=</span><span class="mi">30</span>	<span class="mi">6</span><span class="n">x6</span><span class="o">=</span><span class="mi">36</span>	
+<span class="mi">7</span><span class="n">x1</span><span class="o">=</span><span class="mi">7</span>	<span class="mi">7</span><span class="n">x2</span><span class="o">=</span><span class="mi">14</span>	<span class="mi">7</span><span class="n">x3</span><span class="o">=</span><span class="mi">21</span>	<span class="mi">7</span><span class="n">x4</span><span class="o">=</span><span class="mi">28</span>	<span class="mi">7</span><span class="n">x5</span><span class="o">=</span><span class="mi">35</span>	<span class="mi">7</span><span class="n">x6</span><span class="o">=</span><span class="mi">42</span>	<span class="mi">7</span><span class="n">x7</span><span class="o">=</span><span class="mi">49</span>	
+<span class="mi">8</span><span class="n">x1</span><span class="o">=</span><span class="mi">8</span>	<span class="mi">8</span><span class="n">x2</span><span class="o">=</span><span class="mi">16</span>	<span class="mi">8</span><span class="n">x3</span><span class="o">=</span><span class="mi">24</span>	<span class="mi">8</span><span class="n">x4</span><span class="o">=</span><span class="mi">32</span>	<span class="mi">8</span><span class="n">x5</span><span class="o">=</span><span class="mi">40</span>	<span class="mi">8</span><span class="n">x6</span><span class="o">=</span><span class="mi">48</span>	<span class="mi">8</span><span class="n">x7</span><span class="o">=</span><span class="mi">56</span>	<span class="mi">8</span><span class="n">x8</span><span class="o">=</span><span class="mi">64</span>	
+<span class="mi">9</span><span class="n">x1</span><span class="o">=</span><span class="mi">9</span>	<span class="mi">9</span><span class="n">x2</span><span class="o">=</span><span class="mi">18</span>	<span class="mi">9</span><span class="n">x3</span><span class="o">=</span><span class="mi">27</span>	<span class="mi">9</span><span class="n">x4</span><span class="o">=</span><span class="mi">36</span>	<span class="mi">9</span><span class="n">x5</span><span class="o">=</span><span class="mi">45</span>	<span class="mi">9</span><span class="n">x6</span><span class="o">=</span><span class="mi">54</span>	<span class="mi">9</span><span class="n">x7</span><span class="o">=</span><span class="mi">63</span>	<span class="mi">9</span><span class="n">x8</span><span class="o">=</span><span class="mi">72</span>	<span class="mi">9</span><span class="n">x9</span><span class="o">=</span><span class="mi">81</span>	
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查找素数</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">11</span> <span class="mi">13</span> <span class="mi">17</span> <span class="mi">19</span> <span class="mi">23</span> <span class="mi">29</span> <span class="mi">31</span> <span class="mi">37</span> <span class="mi">41</span> <span class="mi">43</span> <span class="mi">47</span> <span class="mi">53</span> <span class="mi">59</span> <span class="mi">61</span> <span class="mi">67</span> <span class="mi">71</span> <span class="mi">73</span> <span class="mi">79</span> <span class="mi">83</span> <span class="mi">89</span> <span class="mi">97</span> 
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>while 循环嵌套<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>while 循环嵌套执行原理与 for 循环类似。</p>
+<p>while 循环嵌套的通用语法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">条件1</span><span class="p">:</span>
+   <span class="k">while</span> <span class="n">条件2</span><span class="p">:</span>
+      <span class="n">内循环体</span>
+   <span class="n">外循环体</span>
+</pre></div>
+</div>
+<p><strong>同样，在 while 循环嵌套中，外循环的每次迭代都会导致内循环运行其所有迭代。</strong></p>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 矩形图案</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> 
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">()</span> 
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 三角图案</span>
+<span class="n">row</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">row</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">col</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">col</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</pre></div>
+</div>
+<p>嵌套循环是指循环中的循环。一个循环中可以有任意数量的循环。还可以让 for 循环和 while 循环相互嵌套。</p>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈。</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="13.html" class="btn btn-neutral float-left" title="一文了解 Python 中的新功能：match-case 多分支选择语句" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="15.html" class="btn btn-neutral float-right" title="一文了解 Python 中的运算符：//" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zbxx.net。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://www.pythonhome.cn">Python之家</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
