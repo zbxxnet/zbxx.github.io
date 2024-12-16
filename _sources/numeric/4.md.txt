@@ -1,0 +1,111 @@
+# 一文精通 Python 中的数值类型
+
+python 提供了多种内置数据类型。主要包括 Number（数值）、String（字符串）、bool（布尔类型）、List（列表）、Tuple（元组）、Set（集合）、Dictionary（字典）。Python 中的数值类型通常包括整数、浮点数和复数。布尔类型本质上也属于数值类型，将在另一篇文中讲解。在本文中，您将学习 Python 中的数值类型及相关操作。
+
+## 整数
+
+整数（int）指不带小数点的任意长度的数字，可以是正数，也可以是负数。
+
+我们可以通过变量赋值来创建整数。
+
+```python
+m=100
+print(m)  #输出：100
+#type()函数返回对象的类型
+print(type(m))  #输出：<class 'int'>
+```
+
+## 浮点数
+
+浮点数（float）是指具有小数的数值。
+
+```python
+x=100
+y=100.1
+print(type(x)) #输出：<class 'int'>
+print(type(y)) #输出：<class 'float'>
+```
+
+## 复数
+
+Python 复数（Complex）是一个具有实部（real）和虚部（imag）两部分的数字。实部（real）和虚部（imag）都是浮点数，通常表示为：
+
+> real+imag\*j
+
+在高中数学中，对于一元二次方程 ax2+bx+c=0,当 Δ=b24ac<0 时，方程没有实数根，这时就需要引入复数。
+
+复数的运算：
+加法：实部加实部，虚部加虚部(a+bj)+(c+dj)=(a+c)+(b+d)j；
+
+减法：实部减实部，虚部减虚部(a+bj)-(c+di)=(a-c)+(b-d)j；
+
+乘法：设 m=a+bj，n=c+dj，那么它们的乘积为(a+bj)(c+dj)=(ac-bd)+(bc+ad)j；
+
+除法：设 m=a+bj，n=c+dj，那么它们的商为(ac+bd)/(c\*\*2+d\*\*2)+(bc-bd)/(c\*\*2+d\*\*2)
+
+```python
+m=10+3j
+print(m) #输出：(10+3j)
+print(type(m)) #输出：<class 'complex'>
+print(m.real) #输出实部：10.0
+print(m.imag) #输出虚部：3.0
+n=complex(6,-2)
+print(n) #输出：(6-2j)
+#对复数进行简单计算
+print(m+n) #输出：(16+1j)
+print(m*n) #输出：(66-2j)
+```
+
+## 二进制、八进制、十六进制
+
+可以使用 0b 开头表示二进制，使用 0o 开头表示八进制，使用 0x 开头表示二进制。使用相应函数进行转换。
+
+```python
+i=100
+#二进制
+print(bin(i)) #输出：0b1100100
+#八进制
+print(oct(i)) #输出：0o144
+#十六进制
+print(hex(i)) #输出：0x64
+```
+
+## 类型转换
+
+**隐式类型转换：**
+对于两种兼容的数据类型，Python 会隐式执行类型转换。如 int 和 float。整数 int 数据将转换为浮点型 float。这种隐式转换不能用于数值和字符串。
+
+```python
+x=100
+y=3.14
+print(type(x)) #输出：<class 'int'>
+print(type(y)) #输出：<class 'float'>
+z=x+y
+print(type(z)) #输出：<class 'float'>
+```
+
+**显式类型转换**
+
+我们可以使用 int(), float(), complex()函数将一种类型的数据转换为另一种类型。
+
+```python
+print(int(1)) #输出：1
+print(int(2.9)) #输出：2
+print(int("3")) #输出：3
+print(float(1)) #输出：1.0
+print(float(2.9)) #输出：2.9
+print(float("3")) # z 输出：3.0
+print(complex(1)) #输出：(1+0j)
+print(complex(2.9)) #输出：(2.9+0j)
+print(complex("3")) # z 输出：(3+0j)
+```
+
+对于数值和字符串，可以使用 str()进行转换。
+
+```python
+m=100
+n="zbxx.net"
+print(n+str(m)) #输出：zbxx.net100
+```
+
+**文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！**

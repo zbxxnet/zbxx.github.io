@@ -1,0 +1,59 @@
+#  一文了解 Python 的临时文件模块
+
+Python 的 Tempfile 模块是用于创建临时文件和文件夹的标准库。当我们需要临时存储数据时，可以创建临时文件，这些文件位于单独的目录中，该目录因操作系统而异，并且这些文件的名称是唯一的。在 Windows 中，临时文件一般存储在“C:\Users\ADMINI~1\AppData\Local\Temp\” 文件夹。应用程序退出后，存储在临时文件中的数据使用完成后可以自动删除这些文件。
+
+## 创建临时文件
+
+```python
+import tempfile 
+file = tempfile.TemporaryFile() 
+print(file) 
+print(file.name)
+# 输出：
+<tempfile._TemporaryFileWrapper object at 0x03A663B0>
+C:\Users\ADMINI~1\AppData\Local\Temp\tmpqefysklb
+```
+
+首先，我们导入了 tempfile 模块，然后使用 TemporaryFile() 函数创建了一个临时文件对象。使用 print 语句输出临时文件。文件名是随机生成的。
+
+## 创建临时文件夹
+
+```python
+import tempfile
+dir = tempfile.TemporaryDirectory() 
+print(dir)
+# 输出：
+<TemporaryDirectory 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\tmp647p4nk2'>
+```
+
+以上示例，我们使用 TemporaryDirectory() 函数创建了一个临时文件夹。
+
+## 读取和写入临时文件
+
+```python
+import tempfile
+file = tempfile.TemporaryFile()
+file.write(b'Hello World!')
+file.seek(0)
+print(file.read())
+file.close()
+# 输出：
+b'Hello World!'
+```
+
+从上面示例我们可以看到，如何使用 read() 读取和 write() 写入临时文件。write() 写入临时文件默认以字节为单位获取输入数据，使用“b”对字符串进行转。使用 seek() 函数将文件指针移动到文件开头位置，然读取临时文件内容。
+
+```python
+import tempfile
+file = tempfile.TemporaryFile(mode='w+t')
+file.write('Hello World!')
+file.seek(0)
+print(file.read())
+file.close()
+# 输出：
+Hello World!
+```
+
+如果要将文本数据写入临时文件，可以 “mode='w+t'” 模式创建临时文件。
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

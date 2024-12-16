@@ -1,0 +1,108 @@
+# 使用一个Python 文件来运行另一个 Python 文件
+
+在 Python 编程中，经常需要从另一个 Python 文件中执行另一个 Python 文件。这可能是为了模块化、可重用性。在本文中，我们将探讨实现此任务的不同方法，每种方法都有其优势和用例。
+
+
+## 使用 import 语句
+
+从一个 Python 文件运行另一个 Python 文件的最直接方法是使用 import 语句。此方法将目标文件视为一个模块，允许调用其函数、访问其变量并执行其代码。
+
+首先，创建一个简单的 Python 脚本保存为.py 文件，作为被另一个 Python 文件运行的文件。
+
+```python
+# script.py
+def func():
+    print("这是 script.py 文件的运行结果！")
+```
+
+在此示例中，我们使用 import 语句导入 script.py 文件，在另一个文件中调用 func()函数。
+
+```python
+import script
+script.func()
+```
+
+输出：
+
+
+```
+这是 script.py 文件的运行结果！
+```
+
+## 使用 subprocess 模块
+
+让一个 Python 文件运行另一个 Python 文件，可以使用 subprocess 模块，允许从 Python 代码中运行其他程序或命令。在这里，可以使用 subprocess 模块的 run() 函数执行 Python 脚本文件。
+
+首先，创建一个简单的 Python 脚本保存为.py 文件，作为被另一个 Python 文件运行的文件。
+
+```python
+# script.py
+print("这是 script.py 文件的运行结果！")
+```
+
+使用 subprocess 模块来运行这个脚本文件：
+
+```python
+import subprocess
+subprocess.run([“python”， “script.py”])
+```
+
+## 使用 exec() 函数
+
+首先，创建一个简单的 Python 脚本保存为.py 文件，作为被另一个 Python 文件运行的文件。
+
+```python
+# script.py
+print("这是 script.py 文件的运行结果！")
+```
+
+Python 中的 exec() 函数可用于在一个 Python 文件运行另一个 Python 文件。
+
+```python
+with open('script.py', 'r', encoding="utf-8") as file:
+    code = file.read()
+    exec(code)
+```
+
+在此示例中，使用 open() 函数读取文件内容。然后，将内容传递给 exec() 函数执行。
+
+## 使用 os.system() 函数
+
+首先，创建一个简单的 Python 脚本保存为.py 文件，作为被另一个 Python 文件运行的文件。
+
+```python
+# script.py
+print("这是 script.py 文件的运行结果！")
+```
+
+使用 os.system()运行另一个 Python 文件。利用 os.system() 函数使用 “python” 命令执行指定的 Python 文件。如果找不到文件，则会显示适当的错误消息。
+
+```python
+import os
+
+def exec_file(file_path):
+    os.system(f'python {file_path}')
+
+exec_file("script.py")
+```
+
+## 使用 importlib 模块
+
+首先，创建一个简单的 Python 脚本保存为.py 文件，作为被另一个 Python 文件运行的文件。
+
+```python
+# script.py
+print("这是 script.py 文件的运行结果！")
+```
+
+使用 importlib.import_module() 函数 来运行另一个 Python 文件。import_module() 函数将指定的 Python 文件作为模块导入。
+
+```python
+import importlib
+
+def exec_file(file_path):
+    module_name = file_path.replace('.py', '')  
+    module = importlib.import_module(module_name)
+
+exec_file("script.py")
+```

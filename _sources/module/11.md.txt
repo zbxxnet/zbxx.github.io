@@ -1,0 +1,178 @@
+# 一文了解 Python 中的 datetime 的基本操作
+
+Python 中有一个名为 DateTime 的内置模块，可以以多种方式处理日期和时间。在本文中，我们将介绍 Python 中的基本 DateTime 操作。
+
+## datetime.date()
+
+使用 date() 生成日期对象，表示具有年、月和日的日期。
+
+**语法格式：**
+
+`datetime.date( year, month, day)`
+
+strftime 方法以各种格式打印日、月和年。
+
+```python
+from datetime import date
+# 创建日期对象
+current = date.today() 
+# 输出当前年、月、日
+print("当前日：", current.day)
+print("当前月份：", current.month)
+print("当前年份：", current.year)
+# 以不同格式输出日期
+format1 = current.strftime("%m/%d/%y")
+print("格式1：", format1)  
+format2 =  current.strftime("%b-%d-%Y")
+print("格式2：", format2)
+format3 = current.strftime("%d/%m/%Y")
+print("格式3：", format3)     
+format4 =  current.strftime("%B %d, %Y")
+print("格式4：", format4)
+```
+
+输出：
+```python
+当前日： 20
+当前月份： 10
+当前年份： 2023
+格式1： 10/20/23
+格式2： Oct-20-2023
+格式3： 20/10/2023
+格式4： October 20, 2023
+```
+
+**时间日期格式化符号：**
+
+```python
+%y 两位数的年份表示（00-99）
+%Y 四位数的年份表示（000-9999）
+%m 月份（01-12）
+%d 月内中的一天（0-31）
+%H 24小时制小时数（0-23）
+%I 12小时制小时数（01-12）
+%M 分钟数（00=59）
+%S 秒（00-59）
+%j 年内的一天（001-366）
+%p 本地A.M.或P.M.的等价符
+%U 一年中的星期数（00-53）星期天为星期的开始
+%w 星期（0-6），星期天为星期的开始
+%W 一年中的星期数（00-53）星期一为星期的开始
+%f 微秒，以6位数字表示（000001）
+%x 本地相应的日期表示
+%X 本地相应的时间表示
+%Z 当前时区的名称
+%z UTC 偏移量
+%a 本地简化星期名称
+%A 本地完整星期名称
+%b 本地简化的月份名称
+%B 本地完整的月份名称
+%c 本地相应的日期表示和时间表示
+%% %号本身
+```
+
+## datetime.time()
+
+使用 time() 生成的时间对象，表示本地时间。
+
+**语法格式：**
+
+`datetime.time(hour, minute, second, microsecond)`
+
+```python
+from datetime import time
+# 创建时间对象
+defaultTime = time()
+print("默认小时：", defaultTime.hour)
+print("默认分钟：", defaultTime.minute)
+print("默认秒：", defaultTime.second)
+print("默认毫秒：", defaultTime.microsecond)
+# 设置参数
+time= time(hour=10, minute= 5, second=25, microsecond=55)
+print("time：", time)
+```
+
+输出：
+```python
+默认小时： 0
+默认分钟： 0
+默认秒： 0
+默认毫秒： 0
+time： 10:05:25.000055
+```
+
+## datetime.datetime()
+
+datetime.datetime() 显示日期和时间的组合。
+
+```python
+from datetime import datetime
+# 创建对象
+current = datetime.now()
+print(current)
+print("日：", current.day)
+print("月：", current.month)
+print("年：", current.year)
+print("时：", current.hour)
+print("分：", current.minute)
+print("秒：", current.second)
+print("时间戳：", current.timestamp())
+time = current.strftime("%H:%M:%S")
+print("当前时间：", time)
+```
+
+输出：
+```python
+2023-10-20 18:00:47.202527
+日： 20
+月： 10
+年： 2023
+时： 18
+分： 0
+秒： 47
+时间戳： 1697796047.202527
+当前时间： 18:00:47
+```
+
+##  datetime.timedelta()
+
+datetime.timedelta() 返回一个时间，该时间表示两个日期、时间之间的差异。
+
+```python
+from datetime import timedelta, datetime
+date_time = datetime.now() 
+print("当前日期时间：", date_time)
+ten_days_after= date_time + timedelta(days = 10)
+print('10天之后的日期时间：',ten_days_after)
+ten_days_before= date_time - timedelta(days = 10)
+print('10天之前的日期时间：',ten_days_before)
+one_year_before_today= date_time + timedelta(days = 365)
+print('一年后的日期时间：', one_year_before_today)
+one_year_after_today= date_time - timedelta(days = 365)
+print('一年前的日期时间：', one_year_after_today)
+time_after_one_min = date_time + timedelta(seconds=10) * 6
+print('一分钟之后的日期时间：', time_after_one_min)
+# 正数时间差相当于timedelta(days=999999999, hours=23, minutes=59, seconds=59, microseconds=999999)
+print("正数时间差 : ",timedelta.max)
+# 负数时间差相当于timedelta(-999999999)
+print("负数时间差：",timedelta.min)
+# 两个时间的最小差值相当于timedelta(microseconds=1)。
+print("最小差值：",timedelta.resolution)
+print('一年的秒数：',timedelta(days = 365).total_seconds())
+```
+
+输出：
+```python
+当前日期时间： 2023-10-20 18:42:04.593126
+10天之后的日期时间： 2023-10-30 18:42:04.593126
+10天之前的日期时间： 2023-10-10 18:42:04.593126
+一年后的日期时间： 2024-10-19 18:42:04.593126
+一年前的日期时间： 2022-10-20 18:42:04.593126
+一分钟之后的日期时间： 2023-10-20 18:43:04.593126
+正数时间差 :  999999999 days, 23:59:59.999999
+负数时间差： -999999999 days, 0:00:00
+最小差值： 0:00:00.000001
+一年的秒数： 31536000.0
+```
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

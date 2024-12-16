@@ -1,0 +1,63 @@
+# 一文搞懂在 Python 中反转字典的多种方法
+
+在本文中，我们将探讨在 Python 中反转字典的各种方法，使键变成值，使值变成键。
+
+例如：
+
+`dic = {"A": 1, "B": 2, "C": 3 }`
+
+转为：
+
+`inv_dic = {1: 'A', 2: 'B', 3: 'C'}`
+
+## 方法1：使用字典推导
+
+简化 for 循环，使用字典推导来反转字典。
+
+```python
+dic = {"A": 1, "B": 2, "C": 3 }
+inv_dic = {v: k for k, v in dic.items()}
+print(inv_dic)
+```
+
+## 方法2：使用 zip() 函数
+
+使用 zip() 函数创建包含原始字典的值和键的数组对象，使用字典构造函数创建字典。
+
+```python
+dic = {"A": 1, "B": 2, "C": 3 }
+inv_dic = dict(zip(dic.values(), dic.keys()))
+print(inv_dic)
+```
+
+## 方法3：使用 map() 函数
+
+使用 map() 函数，将 reversed 函数应用于字典中的所有项目，使用字典构造函数将映射结果转换为字典。
+
+```python
+dic = {"A": 1, "B": 2, "C": 3 }
+inv_dic = dict(map(reversed, dic.items()))
+print(inv_dic)
+```
+
+## 方法4： 迭代字典
+
+```python
+dic = {"A": 1, "B": 2, "C": 3 }
+inv_dic =  {dic[k]: k for k in dic}
+print(inv_dic)
+```
+.
+## 处理重复项
+
+如果字典的值不是唯一的，可以使用简单的 for 循环来处理字典中的重复值。使用 setdefault() 检测字典中是否包含有给定键，以列表形式存储字典的值。
+
+```python
+dic = {"A": 1, "B": 1, "C": 3 }
+inv_dic = {}
+for k, v in dic.items():
+    inv_dic.setdefault(v, []).append(k)
+print(inv_dic)
+
+# 输出：{1: ['A', 'B'], 3: ['C']}
+```

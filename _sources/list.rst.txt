@@ -1,0 +1,16 @@
+.. Python教程 documentation master file, created by
+   sphinx-quickstart on Fri Dec 13 20:33:36 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Python 列表
+========================
+
+.. toctree::
+    :maxdepth: 2
+
+    list/20.md
+    list/21.md
+    list/22.md
+    list/24.md
+    list/10.md

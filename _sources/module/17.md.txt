@@ -1,0 +1,126 @@
+# 一文了解 Python 中对象的浅拷贝和深拷贝
+
+在 Python 中，我们可以使用赋值运算符 “=” 来创建对象的副本。你可能认为这会创建一个新对象，其实不然，它只创建一个共享引用原始对象的新变量。在本文中，我们将了解浅拷贝 shallow copy 与深拷贝 deep copy 之间的区别。
+
+## 使用赋值运算符 “=” 进行拷贝
+
+让我们举一个例子，我们创建一个名为 list1 的列表并使用赋值运算符 “=” 将对象引用传递给 list2。
+
+```python
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = list1
+list2[0] = 9
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+```
+**输出：**
+
+```python
+list1:[9, 2, 3, 4, 5, 6]
+list1 ID:58270144
+list2:[9, 2, 3, 4, 5, 6]
+list2 ID:58270144
+```
+
+从上面的示例我们看到，两个变量具有相同的id，因此，如果要修改 list1 或 list2 中的任何值，则更改在两者中都可见。
+
+我们再举个例子，不直接使用赋值运算符，而是使用 list() 函数将 list1 转换后再进行赋值。
+
+```python
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = list(list1)
+list2[0] = 9
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+```
+
+**输出：**
+
+```python
+list1:[1, 2, 3, 4, 5, 6]
+list1 ID:62853528
+list2:[9, 2, 3, 4, 5, 6]
+list2 ID:63508688
+```
+
+从上面的示例我们看到，两个变量具有不相同的 id，因此，如果要修改 list1 或 list2 中的任何值，则两者互不影响。
+
+**对象拷贝时，不拷贝子对象的内容，只拷贝子对象的引用，子对象的修改直接影响源对象，可以称为浅拷贝。如果会连子对象的内存全部拷贝一份，对子对象的修改不会影响源对象，可以称为深拷贝。**
+
+## 使用 copy 模块进行拷贝
+
+为了清晰明确的创建这些对象的“真实副本”或“克隆”，我们可以使用 Python 中的 copy 模块。我们使用复制模块。copy() 返回对象的浅拷贝，deepcopy() 返回对象的深拷贝。
+
+```python
+import copy
+list1 = [1, 2, 3,[ 4, 5, 6]]
+list2 = copy.copy(list1)
+
+list2[0] = 666
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+
+list2[3][0] = 999
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+```
+
+**输出：**
+
+```python
+list1:[1, 2, 3, [4, 5, 6]]
+list1 ID:29034136
+list2:[666, 2, 3, [4, 5, 6]]
+list2 ID:29033816
+list1:[1, 2, 3, [999, 5, 6]]
+list1 ID:29034136
+list2:[666, 2, 3, [999, 5, 6]]
+list2 ID:29033816
+```
+
+使用 copy() 进行浅拷贝。对于复杂数据结构，比如以上示例，list1 和 list2 指向不同的对象，但指向同一个子列表 [4，5，6]。
+
+```python
+import copy
+list1 = [1, 2, 3,[ 4, 5, 6]]
+list2 = copy.deepcopy(list1)
+
+list2[0] = 666
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+
+list2[3][0] = 999
+print(f"list1:{list1}")
+print(f"list1 ID:{id(list1)}")
+print(f"list2:{list2}")
+print(f"list2 ID:{id(list2)}")
+```
+
+**输出：**
+
+```python
+list1:[1, 2, 3, [4, 5, 6]]
+list1 ID:30082752
+list2:[666, 2, 3, [4, 5, 6]]
+list2 ID:30082432
+list1:[1, 2, 3, [4, 5, 6]]
+list1 ID:30082752
+list2:[666, 2, 3, [999, 5, 6]]
+list2 ID:30082432
+```
+
+使用 deepcopy() 进行深拷贝。比如以上示例，list1 和 list2 是完全独立的两个对象。
+
+今天我们了解了 Python 中的浅拷贝与深拷贝。我们还了解到，浅拷贝对象只是部分独立于原始对象。而对于深拷贝，对象彼此完全独立。对于不同的数据结构，相同的操作会有不同的结果。
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

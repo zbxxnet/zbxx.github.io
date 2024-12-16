@@ -1,0 +1,99 @@
+# 一文了解 Python 中的转义字符
+
+在使用字符串时，有些字符具有特殊含义。如果想按原样将该字符插入字符串中而不调用其特殊含义，该怎么办。
+
+为了理解这一点，让我们举一个简单的例子。如果需要输出字符串：hello'world。字符串中包含了一个单引号。一般情况，我们可以再使用双引号来定义这个字符串进行输出。
+
+`print("hello'world")`
+
+但是，我们不能使用单引号来定义这个字符串。
+
+`print('hello'world')`
+
+如果需要使用单引号来定义字符串，需要使用反斜杠“\”来进行转义。
+
+`print('hello\'world')`
+
+反斜杠“\”称为转义字符。转义字符对字符串中的字符进行转义，让后面的字符具有不同的含义。
+
+## Python 常见转义字符
+
+|转义序列	|描述|
+|------|------|
+|\\|在行尾时,续行符|
+|\\\\\	|反斜杠 （\\)|
+|\\'	|单引号 （')|
+|\\"	|双引号 （")|
+|\n	|换行符|
+|\t	|制表符|
+|\v|	纵向制表符|
+|\r	|回车|
+|\b	|退格|
+|\f	|换页|
+|\a	|提示音|
+|\ooo	|八进制数|
+|\xhh	|十六进制数|
+|\0|空字符|
+
+## 转义序列示例
+
+```python
+# 续行符
+str1 = "abcdefghijk\
+lmnopqrstuvwxyz"
+print(str1)
+
+# 单引号
+print('Hello\'World')
+
+# 双引号
+print("Hello\"World")
+
+# 反斜杠
+print("Hello\\World")
+
+# 退格键
+print("Hello \bWorld")
+
+# 空字符
+print("Hello \0World")
+
+# 换行符
+print("Hello \nWorld")
+
+# 制表符
+print("Hello\tWorld")
+
+# 回车符
+print("Hello\rWorld")
+
+# 八进制
+print("\110")
+
+# 十六进制
+print("\x48")
+```
+
+```python
+# 运行结果：
+abcdefghijklmnopqrstuvwxyz
+Hello'World
+Hello"World
+Hello\World
+HelloWorld
+Hello 
+Hello 
+World
+Hello	World
+World
+H
+H
+```
+
+要忽略字符串中的所有转义序列，可以在字符串前使用“r”将字符串作为原始字符串。
+
+```python
+>>> print(r"Hello\nWorld")
+Hello\nWorld
+```
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

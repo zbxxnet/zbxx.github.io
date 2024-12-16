@@ -1,0 +1,150 @@
+# 一文搞懂 Python 中的类和对象
+
+Python 是一种面向对象的编程语言。这意味着几乎所有代码都可以使用称为“类”的特殊结构实现。
+
+## 什么是类和对象
+
+类：用户定义的数据结构，是用于创建对象的模板。使用类，您可以根据需要创建任意数量的对象。
+
+对象：类的实例，是属性和方法的集合。
+
+方法：类中定义的函数。
+
+例如，我们设计一个类 teacher，具有“姓名”、“年龄”等属性，有“工作”等行为。根据类，创建多个对象，具体到某位老师。
+
+| 类：teacher      |
+| ---------------- |
+| 属性：姓名、年龄 |  |
+| 行为：工作       |
+
+| 对象 1：     | 对象 2       | ……  |
+| ------------ | ------------ | --- |
+| 姓名：张老师 | 姓名：李老师 | ……  |
+| 年龄：30     | 年龄：36     | ……  |
+| 工作：语文   | 工作：数学   | ……  |
+
+## 在 Python 中创建类
+
+在 Python 中，类是使用关键字 class 定义。
+
+**语法：**
+
+```python
+class class_name:
+    <statement 1>
+    <statement 2>
+    .
+    .
+    <statement N>
+```
+class_name：类的名称。
+
+statements：属性和方法
+
+**示例：**
+
+在此示例中，我们将创建一个具有姓名、年龄和工作的 Teacher 类。
+
+```python
+class Teacher:
+    def __init__(self, name, age, profession):
+        self.name = name
+        self.age = age
+        self.profession = profession
+
+    def show(self):
+        print('姓名:', self.name, '年龄:', self.age)
+
+    def work(self):
+        print(self.name, '从事', self.profession, '学科教学工作。')
+```
+
+## 在 Python 中创建对象
+
+对象是使用类名创建的。当我们创建类的对象时，它被称为实例化。该对象也称为类的实例。
+
+构造函数是用于创建和初始化类对象的特殊方法。此方法在类中定义。
+
+**语法：**
+
+```python
+<object-name> = <class-name>(<arguments>)  
+```
+
+下面是创建 Teacher 类及对象的完整代码。
+
+```python
+class Teacher:
+    def __init__(self, name, age, profession):
+        self.name = name
+        self.age = age
+        self.profession = profession
+
+    def show(self):
+        print('姓名:', self.name, '年龄:', self.age)
+
+    def work(self):
+        print(self.name, '从事', self.profession, '学科教学工作。')
+
+#创建对象        
+li = Teacher('李老师', '30', '语文')
+
+#调用
+li.show()
+li.work()
+```
+
+**输出：**
+
+姓名: 李老师 年龄: 30
+
+李老师 从事 语文 学科教学工作。
+
+## 类中的变量和方法
+
+类变量是在类内部声明的变量，类的所有实例（对象）共享类变量，值不会因对象而异。通过对象可以访问或修改类变量。
+
+类方法用于访问或修改对象状态。
+
+```python
+class Teacher:
+    
+    #变量
+    School = '北京大学'    
+    def __init__(self, name, age, profession):
+        self.name = name
+        self.age = age
+        self.profession = profession
+
+    #方法
+    def show(self):
+        print('姓名:', self.name, '年龄:', self.age)
+
+    def work(self):
+        print(self.name, '从事', self.profession, '学科教学工作。')
+        
+    def change_profession(self, new_profession):
+        self.profession = new_profession   
+    
+
+#创建对象        
+li = Teacher('李老师', '30', '语文')
+
+#调用
+li.show()
+li.work()
+print('学校：', Teacher.School)
+li.change_profession('数学')
+li.work()
+```
+**输出：**
+
+姓名: 李老师 年龄: 30
+
+李老师 从事 语文 学科教学工作。
+
+学校： 北京大学
+
+李老师 从事 数学 学科教学工作。
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

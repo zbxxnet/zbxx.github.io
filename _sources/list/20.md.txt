@@ -1,0 +1,63 @@
+# 一文了解在 Python 中从列表中删除第一个元素的多种方法
+
+列表是 Python 中非常有用的数据结构，可以包含浮点数、整数、字符串等。列表是可变的，可以在创建后进行更改。在本文中，我们将介绍几种从列表中删除第一个元素的方法。
+
+## 使用切片
+
+切片是一种从列表中删除第一个元素的最简单方法。利用列表切片操作返回一个新列表，新列表包含除第一个元素之外的列表的所有元素。将新列表分配给原始列表。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+lst1 = lst1[1:]
+print(lst1)
+```
+
+输出：
+
+['world', 'I', 'love', 'python']
+
+## 使用 del 关键字
+
+使用 del 语句，配合索引号，删除列表中的第一个元素。它与 pop() 函数的不同之处在于它不返回已删除的元素。与切片功能也不同，不会生成新列表。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+del lst1[0]
+print(lst1)
+```
+
+## 使用 pop()
+
+pop()，接受一个索引参数并删除该索引处的元素。如果参数，则默认会删除列表的最后一个元素。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+lst1.pop(0)
+print(lst1)
+```
+## 使用 remove()
+
+remove()，用于从列表中删除给定值。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+i = lst1[0]
+lst1.remove(i)
+print(lst1)
+```
+
+## 使用 deque()
+
+deque()，是 collections 库中的一项，可以创建两端都可以操作的序列，可以快速的在队列头部和尾部添加、删除元素。
+
+```python
+from collections import deque
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+lst2 = deque(lst1)
+lst2.popleft()
+lst1 = list(lst2)
+print(lst1)
+```
+
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

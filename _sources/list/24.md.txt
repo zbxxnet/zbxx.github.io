@@ -1,0 +1,96 @@
+# 一文掌握 Python 中的排序函数： sorted() 和 sort()
+
+排序是所有程序员经常使用的功能，Python 提供了强大的排序功能，可以实现基本排序或自定义排序。在本文中，我们将学习对不同类型数据进行排序方法。
+
+
+## 使用 sorted() 进行排序
+
+**对数字进行排序**
+
+可以在 Python 中使用 sorted() 对列表进行排序。在此示例中，定义了一个整数列表作为参数进行排序。
+
+```python
+n=[9,5,2,7]
+m=sorted(n)
+print(m)
+#输出：[2, 5, 7, 9]
+```
+
+sorted()还可以用于元组和集合。
+
+```python
+n1=(9,5,2,7)
+m1=sorted(n1)
+n2={9,5,2,7}
+m2=sorted(n2)
+print(m1)
+#输出：[2, 5, 7, 9]
+print(m2)
+#输出：[2, 5, 7, 9]
+```
+
+请注意，即使输入是集合和元组，输出也是一个列表，因为 sorted() 根据定义返回一个新列表。
+
+**对字符串进行排序**
+
+```python
+n1="9527"
+m1=sorted(n1)
+n2="zbxx.net"
+m2=sorted(n2)
+print(m1)
+#输出：['2', '5', '7', '9']
+print(m2)
+#输出：['.', 'b', 'e', 'n', 't', 'x', 'x', 'z']
+```
+
+sorted() 对字符串类型的数据排序方式与其他可迭代对象类似，如列表和元组。
+
+值得注意的是，如果迭代对象是包含整数和字符串的组合，sorted() 不能完成排序。
+
+sorted() 是一个内置函数，默认按升序对值进行排序。
+
+语法格式：
+
+sorted(iterable, /, *, key=None, reverse=False)
+
+sorted() 与参数 reverse 一起使用，可以实现降序排序。
+
+```python
+n=[9,5,2,7]
+m=sorted(n,reverse=True)
+print(m)
+#输出：[9, 7, 5, 2]
+```
+
+key 参数可以接受一个函数，自定义排序规则；
+
+```python
+url=['Https','www','Zbxx','net']
+#按字符串长度排序
+m1=sorted(url,key=len)
+print(m1)
+#输出：['www', 'net', 'Zbxx', 'Https']
+#转换成小写排序，不改变原始列表中的数据
+m2=sorted(url,key=str.lower)
+print(m2)
+#输出：['Https', 'net', 'www', 'Zbxx']
+```
+
+## 使用 sort() 进行排序
+
+sort() 与 sorted() 名称相似，能够完成相同的事情，但使用上有很大不同。sort() 只能对列表进行排序，并且会改变原始数据。具有与 sorted() 相同的参数。
+
+```python
+url=['Https','www','Zbxx','net']
+#按字符串长度排序
+url.sort(key=len)
+print(url)
+#输出：['www', 'net', 'Zbxx', 'Https']
+#转换成小写排序
+url.sort(key=str.lower,reverse=True)
+print(url)
+#输出：['Zbxx', 'www', 'net', 'Https']
+```
+
+**文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！**

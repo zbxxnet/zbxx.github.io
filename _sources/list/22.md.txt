@@ -1,0 +1,75 @@
+# 一文了解在 Python中 反向迭代列表的多种方法
+
+列表是 Python 中非常有用的数据结构，可以包含浮点数、整数、字符串等。列表是可变的，可以在创建后进行更改。在本文中，我们将介绍几种以相反顺序迭代列表的方法。
+
+## 使用 for 循环和 range()
+
+当涉及到迭代列表内容时，最常用的就是循环。为了在 Python 中进行列表迭代，我们使用 range() 函数。
+
+
+
+范围（镜头（给定列表）-1， -1， -1 )
+这将返回从 n 到 1 的数字，即反向索引。
+
+**range() 语法：**
+
+range([start],stop[,step]）
+
+**参数：**
+
+start：起始索引号。
+
+stop：结束索引号，但不包含。
+
+step：索引变化量。
+
+我们利用列表负索引来进行反向迭代。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+for i in range(len(lst1) - 1, -1, -1):
+    print(lst1[i])
+```
+
+输出：
+
+python
+
+love
+
+I
+
+world
+
+hello
+
+## 使用 while循环
+
+首先，我们使用 len() 确定列表的长度。循环变量设置为列表的长度 -1。索引值每次递减 1，直到索引值达到 0。同时输出索引对应的列表元素。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+i = len(lst1) - 1
+while i >= 0:
+    print(lst1[i])
+    i = i - 1
+```
+
+## 使用列表推导式
+
+使用[：：-1]直接生成一个反向列表，然后利用列表推导式进行迭代。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+[print(i) for  i in lst1[: : -1]]
+```
+## 使用 reversed()
+
+reversed() 函数返回一个迭代器，该迭代器以相反的顺序遍历给定的列表。
+
+```python
+lst1 = ['hello', 'world', 'I', 'love', 'python']
+for i in reversed(lst1):
+    print(i)
+```
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

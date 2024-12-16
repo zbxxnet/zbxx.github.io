@@ -1,0 +1,99 @@
+# 一文了解 Python 中带有 else 的循环语句 for-else/while-else
+
+在本文中，我们将向您介绍如何在 python 中使用带有 else 的 for/while 循环语句。
+
+可能许多人对循环和 else 一起使用感到困惑，因为在 if-else 选择结构中 else 正常的，有意义的，但是与 for/while 循环结合使用有什么作用呢？
+
+else 与 while 和 for 循环一起使用，else 块将在循环正常结束时运行。
+
+**语法格式：**
+
+```python
+for variable_name in iterable:
+    循环体代码
+else:
+    else代码
+```
+
+```python
+while condition:
+    循环体代码
+else:
+    else代码
+```
+
+## for 循环使用 else 语句
+
+在其他编程语言中，else 语句仅在 if-else 选择结构中使用。但是在 Python 也允许我们和 for 循环一起使用。
+
+else 语句仅在循环正常终止时使用，在强制终止循环的情况下，会忽略 else 语句，跳过其执行。即当循环未被 break 语句终止时，会执行循环之后的 else 语句。
+
+以下程序显示了如何将 else 语句与 for 循环一起使用：
+
+```python
+for i in range(3):
+    print(i)
+else:
+    print("看到这条语句，代表循环正常结束。")
+```
+输出：
+```python
+0
+1
+2
+看到这条语句，代表循环正常结束。
+```
+
+以上示例中，else 语句被执行，因为 for 循环在遍历完 range(3) 后正常终止。
+
+```python
+for i in range(3):
+    print(i)
+    if i == 1:
+        break
+else:
+   print("看到这条语句，代表循环正常结束。")
+```
+输出：
+```python
+0
+1
+```
+以上示例中，不会执行 else 语句，因为循环中使用了 break 语句，强制停止循环，循环没有正常结束。
+
+## while 循环使用 else 语句
+
+在 while 循环中使用 else 语句的作用与 for 循环相同。
+
+```python
+i = 0
+while i <3:
+    print(i)
+    i += 1
+else:
+   print("看到这条语句，代表循环正常结束。")
+```
+输出：
+```python
+0
+1
+2
+看到这条语句，代表循环正常结束。
+```
+
+```python
+i = 0
+while i <3:
+    print(i)
+    if i == 1:
+        break
+    i += 1
+else:
+   print("看到这条语句，代表循环正常结束。")
+```
+输出：
+```python
+0
+1
+```
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

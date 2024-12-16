@@ -1,0 +1,99 @@
+# 一文了解 Python 中 find() 和 index() 之间的区别
+
+在本文中，我们将了解 Python 中 find() 和 index() 两种方法之间的差异。这两种字符串方法的功能非常相似，可以检测字符串中是否包含子字符串，但是也有少许差异。
+
+## find()方法
+
+find() 方法检测字符串中是否包含子字符串，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，如果包含子字符串返回开始的索引值，否则返回-1。
+
+**语法：**
+
+`str.find(str, beg=0, end=len(string))`
+
+**参数：**
+
+str -- 指定检索的字符串
+
+beg -- 开始索引，默认为0。
+
+end -- 结束索引，默认为字符串的长度。
+
+**返回值：**
+
+如果包含子字符串返回开始的索引值，否则返回-1。
+
+**示例：**
+
+```python
+str1 = 'I Love Python'
+print(str1.find('Love'))
+print(str1.find('I', 1, 8))
+print(str1.find('Python', 2))
+```
+
+输出：
+```python
+2
+-1
+7
+```
+
+##  index()方法
+
+index() 方法检测字符串中是否包含子字符串，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，如果不在，返回一个异常。
+
+**语法：**
+
+`str.index(substring, beg=0, end=len(string))`
+
+**参数：**
+
+substring -- 指定检索的字符串。
+
+beg -- 开始索引，默认为 0。
+
+end -- 结束索引，默认为字符串的长度。
+
+**返回值：**
+
+如果包含子字符串返回开始的索引值，否则抛出异常。
+
+**示例：**
+
+```python
+str1 = 'I Love Python'
+print(str1.index('Love'))
+print(str1.index('I', 1, 8))
+```
+
+输出：
+```python
+2
+Traceback (most recent call last):
+  File "C:\1.py", line 3, in <module>
+    print(str1.index('I', 1, 8))
+ValueError: substring not found
+```
+
+如果字符串中找不到子字符串，index() 则会引发 ValueError。
+
+## find() 和 index() 的区别
+
+如果在字符串中找不到子字符串，则 find() 返回 -1，而 index() 会抛出 ValueError 异常。
+因此，find() 可以在条件语句（if、if-else、if-elif）中使用，根据字符串中子字符串的存在与否来进行判断。index() 方法不能用在条件语句中使用。
+
+find() 只能与字符串一起使用，index() 可以与列表、元组和字符串一起使用。
+
+```python
+str1 = 'I Love Python'
+if str1.find('Love'):
+    print("[Love] 在字符串中！")
+else:
+    print("[Love] 不在字符串中！")
+```
+
+输出：
+```python
+[Love] 在字符串中！
+```
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

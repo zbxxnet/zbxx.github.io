@@ -1,0 +1,82 @@
+# 一文搞懂 Python 中的字节字符串
+
+字节字符串，又被称为字节串，Python 3 中新增的 bytes 类型。
+
+字符串（str）由多个字符组成，以字符为单位进行操作。字节串（bytes）由多个字节组成，以字节为单位进行操作。bytes 和 str 除操作的数据单元不同之外，它们支持的所有方法都基本相同，bytes 也是不可变序列。
+
+## 字节
+
+字节（bytes）是计算机存储容量的一种计量单位，最常用的字节包含八位，即它包含八位（bit）的二进制数。位（bit）：是计算机内部数据储存的最小单位，使用二进制数表示。习惯上用大写 B 来表示字节，即1B（字节）= 8bit（位）。
+
+在字节串中每个数据单元都是字节，可以用一个十六进制数来表示。
+
+`b'\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c'`
+
+Python 中，使用 b 前缀来表示字节串。以上示例中 \xe4 就表示 1 字节，其中 \x 表示十六进制，e4 就是两位的十六进制数。
+
+字符串是 Unicode 字符序列，而字节字符串是原始字节序列。如果要保存传输字符串，就需要把 str 编码为以字节为单位的 bytes，如果想要读取，则需要将 bytes 解码为 str。字节串可以直接保存传输，不需要编码解码。
+
+## 字符串与字节串
+
+1. 创建字符串
+
+在此示例中，我们使用双引号定义一个字符串“Hello World”。
+
+```python
+>>> str1 = "Hello World"
+>>> print(str1)
+Hello World
+```
+
+2. 创建字节串
+
+在此示例中，我们使用 b 前缀定义一个字节串“Hello World”。
+
+```python
+>>> byte1 = b"Hello World"
+>>> print(byte1)
+b'Hello World'
+```
+
+3. 字节串操作
+```python
+# 创建一个空的bytes
+>>> byte1 = bytes()
+>>> byte2 = b''
+>>> byte3 = b'Hello World'
+>>> print(byte3)
+b'Hello World'
+
+# 通过索引输出单个字节
+>>> print(byte3[0])
+72
+
+# 通过索引输出多个字节
+>>> print(byte3[1:3])
+b'el'
+
+# 使用 bytes() 函数由字符串创建字节串
+>>> byte4 = bytes('你好世界',encoding='utf-8')
+>>> print(byte4)
+b'\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c'
+
+# 调用字符串本身的 encode() 方法将字符串转换成字节串
+>>> str1 = '你好世界'
+>>> byte5 = str1.encode('utf-8')
+>>> print(byte5)
+b'\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c'
+```
+
+4. 字节串转为字符串
+
+decode() 方法可以将一个字节串对象转换成字符串。
+
+```python
+>>> byte6 = b'\xe4\xbd\xa0\xe5\xa5\xbd\xe4\xb8\x96\xe7\x95\x8c'
+>>> str2 = byte6.decode('utf-8')
+>>> print(str2)
+你好世界
+```
+
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

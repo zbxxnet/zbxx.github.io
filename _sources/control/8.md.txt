@@ -1,0 +1,60 @@
+# 一文了解 Python 中按条件导入模块
+
+在 python 中，模块是一组可以导入到其他代码中的代码片段。我们不必每次都编写相同的代码段，可以导入模块并避免开发冗余代码。
+
+但是，当模块不存在，或者导入不成功时，python 会抛出 ImportError。这就是有条件导入发挥作用的时候。所以使用 python 按条件导入模块，如果给定的导入语句没有成功执行，我们可以提供另一种解决方案。
+
+通常，如果模块不再存在，或者尝试从模块导入子模块，但该模块中不存在该子模块时，会导致 ImportError。
+
+导入模块方法：import module_name
+
+导入子模块：from module_name import sub_module_name
+
+当 python 版本不一致时，模块包含的某些函数可能不同，函数所在的模块的模块名称也可能不同。此外，如果缺少特定的依赖项，也会导致导入模块失败。因此，如果仅在满足特定条件时使用模块，避免导入模块错误。
+
+## 通过检查 python 版本来导入模块
+
+在导入模块之前，检查 python 版本非常重要。为了检查版本，需要导入 sys 模块，使用 Sys.version_info() 来检查 python 版本。
+
+version_info()：用于返回当前所使用的 Python 版本号。
+
+version_info() 包含了 5 个与版本相关的参数，分别是主要版本号（major）、次要版本号（minor）、微型版本号（micro）、发布级别（releaselevel）和序列号（serial）。
+
+以下示例检查 Python 当前版本号是否大于 3.7.1，条件成立，导入模块 module1；条件不成立，导入模块 module2。
+
+```python
+import sys
+if sys.version_info > (3,7,1):
+    import module1
+else:
+    import module2
+```
+
+## 按其他条件导入模块
+
+如果导入模块受其他条件限制，我们可以像检测版本号那样检测其他条件。
+
+```python
+if n == val1:
+    import module1
+elif n == val2:
+    import module2
+elif n == val3:
+    import module3
+else:
+    import module4
+```
+
+## 通过异常处理导入模块
+
+我们在 try 块中导入一个模块。如果模块导入失败，会导致 ImportError ，从而转到 except 执行导入另一个模块。
+
+```python
+try:
+    import module1
+except ImportError:
+    import module2
+```
+
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

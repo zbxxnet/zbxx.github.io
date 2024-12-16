@@ -1,0 +1,74 @@
+# Python 程序统计字符串中每个单词的出现次数
+
+本文中，需要编写一个 Python 程序，该程序将接受一个字符串作为输入并计算其中每个单词的出现次数。我们可以用多种方法来解决这个问题。
+
+## 使用列表计算词频
+
+使用列表来计算字符串中每个单词的出现次数：
+
+- 将字符串转换为列表 input_string_list。
+- 初始化一个空的列表 unique_string_list。
+- 将字符串列表中的唯一值添加到空列表 unique_string_list。
+- 使用循环迭代列表 unique_string_list 的元素，使用 count() 函数计算元素在列表 input_string_list 中出现的次数。
+
+```python
+# 测试字符串
+input_string ='python  javascript java python javascript python java'
+print("字符串：", input_string)
+# 字符串转列表
+input_string_list = input_string.split()     
+print("字符串列表：", input_string_list)
+unique_string_list = [] 
+# iterate the input string list and find unique words 
+for i in input_string_list:         
+    if i not in unique_string_list: 
+        unique_string_list.append(i) 
+print("唯一字符串列表：", unique_string_list)
+for i in range(0, len(unique_string_list)):
+    # 统计输出单词数量
+    print('词频[{}]: {}'.format(unique_string_list[i], input_string_list.count(unique_string_list[i])))
+```
+
+运行结果：
+
+```python
+字符串： python  javascript java python javascript python java
+字符串列表： ['python', 'javascript', 'java', 'python', 'javascript', 'python', 'java']
+唯一字符串列表： ['python', 'javascript', 'java']
+词频[python]: 3
+词频[javascript]: 2
+词频[java]: 2
+```
+
+## 使用集合计算词频
+
+使用集合来计算字符串中每个单词的出现次数：
+
+- 同将字符串转换为列表 input_string_list。
+- 将列表转换为集合删除重复项。
+- 使用循环迭代集合的元素，使用 count() 函数计算元素在列表 input_string_list 中出现的次数。
+
+```python
+# 测试字符串
+input_string ='python  javascript java python javascript python java'
+print("字符串：", input_string)
+# 字符串转列表
+input_string_list = input_string.split()
+print("字符串列表：", input_string_list)
+# 列表转集合
+unique_string_set = set(input_string_list) 
+print("字符串集合：", unique_string_set)
+for i in unique_string_set:
+    print('词频[{}]: {}'.format(i, input_string_list.count(i)))
+```
+
+运行结果：
+
+```python
+字符串： python  javascript java python javascript python java
+字符串列表： ['python', 'javascript', 'java', 'python', 'javascript', 'python', 'java']
+字符串集合： {'java', 'javascript', 'python'}
+词频[java]: 2
+词频[javascript]: 2
+词频[python]: 3
+```

@@ -1,0 +1,99 @@
+# 一文掌握在 Python 中将字符串转换为浮点数或整数
+
+本教程中将介绍如何在 Python 中使用内置float()、int()函数、literal_eval()函数等，将字符串转换为浮点数 float 或整数 int。
+
+## 在 Python 中将字符串转换为浮点数
+
+Python 的内置函数 float()，可以将浮点型和整数型的字符串转换为浮点数。但是不能转换包含字母等非数值型字符的字符串。
+
+```python
+>>> float("123.4")
+123.4
+>>> float("123.0")
+123.0
+>>> float("123")
+123.0
+>>> float("a123")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: could not convert string to float: 'a123'
+>>> float("#123")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: could not convert string to float: '#123'
+```
+
+## 在 Python 中将字符串转换为整数
+
+Python 的内置函数 int()，可以将整数型的字符串转换为整数，不能将浮点数型的字符串转换为整数，不能转换包含字母等非数值型字符的字符串。
+
+
+```python
+>>> int("123")
+123
+>>> int("123.4")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '123.4'
+>>> int("123.0")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '123.0'
+```
+
+可以将浮点数型字符串转换浮点数后，使用 int()将浮点数转换为整数。
+
+```python
+>>> int(float("123.4"))
+123
+```
+
+## 使用 literal_eval() 方法转换字符串
+
+ast模块中的 literal_eval 方法可以把数值型的字符串转换为浮点数或整数。
+
+```python
+>>> import ast
+>>> ast.literal_eval("123.4")
+123.4
+>>> ast.literal_eval("123.0")
+123.0
+>>> ast.literal_eval("123")
+123
+>>> ast.literal_eval("a123.4")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+  File "D:\Backup\Desktop\thonny\lib\ast.py", line 46, in literal_eval
+    node_or_string = parse(node_or_string, mode='eval')
+  File "<unknown>", line 1
+    a123.4
+         ^
+SyntaxError: unexpected EOF while parsing
+```
+
+## 使用 atof() 方法转换包含千位分隔符的字符串
+
+如果字符串中存在逗号，则转换将引发异常。但是逗号通常用作千位分隔符。
+
+```python
+>>> float("123,456.7")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: could not convert string to float: '123,456.7'
+>>> float("123,456")
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+ValueError: could not convert string to float: '123,456'
+```
+
+locale 模块可以用于设置设置区域信息，atof() 函数可以根据区域设置将给定的字符串转换为浮点数。
+
+```python
+>>> import locale
+>>> locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+'en_US.UTF-8'
+>>> locale.atof("123,456.7")
+123456.7
+```
+
+> 文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！

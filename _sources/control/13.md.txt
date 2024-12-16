@@ -1,0 +1,99 @@
+# 一文了解 Python 中的新功能：match-case 多分支选择语句
+
+Python 编程语言正在不断发展，每次更新都会添加新的特性和功能。Python 3.10 发布后，增加了多分支选择语句，也称为 match-case 语句。这是 Python 3.10 最重要的新功能，允许在多个条件下更轻松地控制程序流程。
+
+在本文中，我们将学习 Python 中的 match-case 语句。
+
+## match-case 语法格式：
+
+```python
+parameter = "zbxx.net"
+match parameter:
+    case first :
+        do_something(first)
+    case second :
+        do_something(second)
+		............
+		............
+    case n :
+        do_something(n)
+    case _ :
+        nothing_matched_function()
+```
+
+match-case 语句使用 match 关键字初始化并获取一个参数，然后使用 case 关键字与参数匹配。“_”是通配符，当没有任何匹配项时运行。
+
+## match-case 实例：
+
+```python
+day=input("请输入一个数字（1 - 7）：")
+match day:
+    case "1":
+        print("星期一")
+    case "2":
+        print("星期二")
+    case "3":
+        print("星期三")
+    case "4":
+        print("星期四")
+    case "5":
+        print("星期五")
+    case "6":
+        print("星期六")
+    case "7":
+        print("星期日")
+    case _:
+        print("请输入一个有效数字！")
+```
+
+## match-case 匹配类型和结构
+
+Python 的另一个令人难以置信的功能是能够匹配类型和结构。这意味着 Python 可以判断一个对象是否是可迭代的，可以从中提取值，检查传入的内容的类型。
+
+```python
+values=['zbxx.net']
+match values:
+    case [a]:
+        print(f'只有一个元素：{a}')
+    case [a, b]:
+        print(f'两个元素:{a},{b}')
+    case [a, b, c]:
+        print(f'三个元素:{a},{b},{c}')
+    case [a, b, c, *other]:
+        print(f'不止三个元素:{a}{b}{c},还有:{other}')
+#输出：只有一个元素：zbxx.net
+```
+
+```python
+values=['https://','www.','zbxx.net','1','2','3']
+match values:
+    case [a]:
+        print(f'只有一个元素：{a}')
+    case [a, b]:
+        print(f'两个元素:{a},{b}')
+    case [a, b, c]:
+        print(f'三个元素:{a},{b},{c}')
+    case [a, b, c, *other]:
+        print(f'不止三个元素:{a}{b}{c},还有:{other}')
+#输出：不止三个元素:https://www.zbxx.net,还有:['1', '2', '3']
+```
+
+```python
+def type_of(var):
+    match var:
+        case int() | float() as var:
+            return "数值"
+        case dict() as var:
+            return "字典"
+        case list() | tuple() | set() as var:
+            return "列表,元组,集合"
+        case str() as var:
+            return "字符串"
+        case _:
+            return "其他类型"
+
+print(type_of(1)) #输出：数值
+print(type_of((1,2))) #输出：列表,元组,集合
+```
+
+**文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！**
