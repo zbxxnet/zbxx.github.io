@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN" data-content_root="./">
+<html lang="zh-CN" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 数值 &#8212; Python教程</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <script src="_static/documentation_options.js?v=7d86a446"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/translations.js?v=beaddf03"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="一文精通 Python 中的数值类型" href="numeric/4.html" />
-    <link rel="prev" title="一文了解 Python 中的下划线 “_”" href="tips/12.html" /> 
+    <title>在 Python 中检查一个数字是否是彼得森数（Peterson number） &#8212; Python教程</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic_mod.css?v=9b2032db" />
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/petite-vue.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="在 Python 中检查一个数字是否是间谍数(spy number)" href="30.html" />
+    <link rel="prev" title="在 Python 中检查一个数是不是另一个数的整数次幂" href="28.html" /> 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
   </head><body data-dark_mode_code_blocks="true">
 
@@ -32,7 +32,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">Python教程</a></h1>
+        <h1><a href="../index.html" title="Go to homepage">Python教程</a></h1>
 
         <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
     <template v-if="mode == 'light'">
@@ -94,7 +94,7 @@
 })()
 </script>
             <p class="mobile_search_link">
-                <a href="search.html" title="Search">
+                <a href="../search.html" title="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
                         <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
                     </svg>
@@ -107,7 +107,7 @@
 <search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">快速搜索</h3>
     <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="提交" />
     </form>
@@ -121,30 +121,30 @@
     
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Python 技巧</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 数值</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html">一文精通 Python 中的数值类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/18.html">一文了解 Python 中分数的表示及处理方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/28.html">在 Python 中检查一个数是不是另一个数的整数次幂</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/29.html">在 Python 中检查一个数字是否是彼得森数（Peterson number）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/30.html">在 Python 中检查一个数字是否是间谍数(spy number)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/31.html">在 Python 中检查一个数字是否是快乐数（Happy Number）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/32.html">在 Python 中检查一个数字是否是霓虹灯数（Neon Number）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/33.html">在 Python 中检查一个数字是否是普洛尼克数(Pronic Number)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/34.html">在 Python 中检查一个数字是否是三态数（Trimorphic Number）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/35.html">在 Python 中检查一个数字是否是锶数（Strontio Numbers）、邪恶数（Evil Numbers）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/36.html">在 Python 中检查一个数字是否是同构数（Automorphic Numbers）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/37.html">在 Python 中检查一个数字是否是阳光数（Sunny Number）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Python 技巧</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../numeric.html">Python 数值</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="4.html">一文精通 Python 中的数值类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18.html">一文了解 Python 中分数的表示及处理方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="28.html">在 Python 中检查一个数是不是另一个数的整数次幂</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在 Python 中检查一个数字是否是彼得森数（Peterson number）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="30.html">在 Python 中检查一个数字是否是间谍数(spy number)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31.html">在 Python 中检查一个数字是否是快乐数（Happy Number）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32.html">在 Python 中检查一个数字是否是霓虹灯数（Neon Number）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33.html">在 Python 中检查一个数字是否是普洛尼克数(Pronic Number)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34.html">在 Python 中检查一个数字是否是三态数（Trimorphic Number）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35.html">在 Python 中检查一个数字是否是锶数（Strontio Numbers）、邪恶数（Evil Numbers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="36.html">在 Python 中检查一个数字是否是同构数（Automorphic Numbers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="37.html">在 Python 中检查一个数字是否是阳光数（Sunny Number）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="operation.html">Python 运算</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Python 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">Python 列表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dict.html">Python 字典</a></li>
-<li class="toctree-l1"><a class="reference internal" href="control.html">Python 流程控制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">Python 文件操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module.html">Python 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop.html">Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Python 运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strings.html">Python 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list.html">Python 列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dict.html">Python 字典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control.html">Python 流程控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file.html">Python 文件操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module.html">Python 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oop.html">Python 面向对象编程</a></li>
 </ul>
 
         </div>
@@ -156,80 +156,83 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="python">
-<h1>Python 数值<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="numeric/4.html">一文精通 Python 中的数值类型</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html#id1">整数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html#id2">浮点数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html#id3">复数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html#id4">二进制、八进制、十六进制</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/4.html#id5">类型转换</a></li>
+  <section id="python-peterson-number">
+<h1>在 Python 中检查一个数字是否是彼得森数（Peterson number）<a class="headerlink" href="#python-peterson-number" title="Link to this heading">¶</a></h1>
+<p>如果一个数字，每位数字的阶乘之和等于给定数字本身，那么给定的数字称为彼得森数。</p>
+<p>例如：N = 145</p>
+<p>145 = 5! + 4! + 1!</p>
+<p>= 120 + 24 +1</p>
+<p>= 145</p>
+<p>145 是一个彼得森数。</p>
+<section id="id1">
+<h2>方法1：<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p><strong>算法：</strong></p>
+<ul class="simple">
+<li><p>使用 import 导入 math 模块。</p></li>
+<li><p>将待检测数字存储在变量 sum。</p></li>
+<li><p>定义变量 sumfact 并将其初始化为 0，用于存储阶乘之和。</p></li>
+<li><p>使用 str() 函数将给定的数字 num 转换为字符串。</p></li>
+<li><p>使用 list()、map()、split() 函数将给定的数字转换为数字列表。</p></li>
+<li><p>使用 for 循环遍历此数字列表。</p></li>
+<li><p>使用 math.factorial() 函数计算列表元素的阶乘。</p></li>
+<li><p>将此阶乘值累加到 sumfact。</p></li>
+<li><p>使用 If 条件语句检查 sumfact == sum。</p></li>
+<li><p>如果语句为 True，则输出给定的数字是是一个彼得森数。</p></li>
+<li><p>否则，输出给定的数字不是一个彼得森数。</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/18.html">一文了解 Python 中分数的表示及处理方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/18.html#id1">使用整数创建分数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/18.html#id2">使用浮点数创建分数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/18.html#id3">分数的算术运算</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/28.html">在 Python 中检查一个数是不是另一个数的整数次幂</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/28.html#log">使用 log()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/28.html#while">使用 while循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/28.html#id1">检查是不是 2 的整数次幂</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/29.html">在 Python 中检查一个数字是否是彼得森数（Peterson number）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/29.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/29.html#id2">方法2：</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/30.html">在 Python 中检查一个数字是否是间谍数(spy number)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/30.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/30.html#id2">方法2：</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/31.html">在 Python 中检查一个数字是否是快乐数（Happy Number）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/31.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/31.html#id2">方法2：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/31.html#id3">方法3：</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/32.html">在 Python 中检查一个数字是否是霓虹灯数（Neon Number）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/32.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/32.html#id2">方法2：</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/33.html">在 Python 中检查一个数字是否是普洛尼克数(Pronic Number)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/33.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/33.html#id2">方法2：</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/34.html">在 Python 中检查一个数字是否是三态数（Trimorphic Number）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/34.html#id1">方法1：字符串切片</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/34.html#id2">方法2：数字取余整除</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/35.html">在 Python 中检查一个数字是否是锶数（Strontio Numbers）、邪恶数（Evil Numbers）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/35.html#strontio-numbers">锶数（Strontio Numbers）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/35.html#evil-numbers">邪恶数（Evil Numbers）</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/36.html">在 Python 中检查一个数字是否是同构数（Automorphic Numbers）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/36.html#id1">方法1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/36.html#id2">方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/36.html#id3">方法3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/36.html#id4">方法4</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numeric/37.html">在 Python 中检查一个数字是否是阳光数（Sunny Number）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numeric/37.html#id1">方法1：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numeric/37.html#id2">方法2：</a></li>
-</ul>
-</li>
-</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">145</span>
+<span class="n">sumfact</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">strnum</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">lstdigts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">strnum</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lstdigts</span><span class="p">:</span>
+    <span class="n">numfact</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sumfact</span> <span class="o">=</span> <span class="n">sumfact</span><span class="o">+</span><span class="n">numfact</span>
+<span class="k">if</span> <span class="n">sumfact</span> <span class="o">==</span> <span class="n">num</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;是一个彼得森数。&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;不是一个彼得森数。&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</section>
+<section id="id2">
+<h2>方法2：<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p><strong>算法：</strong></p>
+<p>将 0~9 的阶乘存储到列表，提取给定数字的每位数字并从列表找到它的阶乘并求和。</p>
+<ul class="simple">
+<li><p>自定义列表 fact，存储 0~9 的阶乘。</p></li>
+<li><p>自定义函数 peterson(n)。</p></li>
+<li><p>使用 while 循环。</p></li>
+<li><p>使用取余运算获取最后一位数字。</p></li>
+<li><p>从列表获取阶乘并累加求和。</p></li>
+<li><p>使用整除运算去掉最后一位数字。</p></li>
+<li><p>循环执行，得到阶乘之和。</p></li>
+<li><p>自定义函数 peterson(n) 返回 sumnum == num 结果。</p></li>
+<li><p>将待检测数字存储在变量 n。</p></li>
+<li><p>使用 If 条件语句检查 peterson(n) 的结果。</p></li>
+<li><p>如果语句为 True，则输出给定的数字是是一个彼得森数。</p></li>
+<li><p>否则，输出给定的数字不是一个彼得森数。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fact</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">5040</span><span class="p">,</span> <span class="mi">40320</span><span class="p">,</span> <span class="mi">362880</span><span class="p">]</span> 
+<span class="k">def</span> <span class="nf">peterson</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="n">num</span> <span class="o">=</span> <span class="n">n</span> 
+    <span class="n">sumnum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> 
+        <span class="n">sumnum</span> <span class="o">+=</span> <span class="n">fact</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> 
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">10</span> 
+    <span class="k">return</span> <span class="n">sumnum</span> <span class="o">==</span> <span class="n">num</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="mi">145</span>
+<span class="k">if</span> <span class="n">peterson</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;是一个彼得森数。&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;不是一个彼得森数。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈。</p>
+</div></blockquote>
+</section>
 </section>
 
 
@@ -238,6 +241,24 @@
         </div>
       </div>
     
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">在 Python 中检查一个数字是否是彼得森数（Peterson number）</a><ul>
+<li><a class="reference internal" href="#id1">方法1：</a></li>
+<li><a class="reference internal" href="#id2">方法2：</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
 
       <div class="clearer"></div>
     </div>
@@ -245,14 +266,14 @@
         <div class="button_nav">
             <div class="left">
                 
-                <a href="tips/12.html">
-                    <span class="icon">&lt;</span><span>一文了解 Python 中的下划线 “_”</span></a>
+                <a href="28.html">
+                    <span class="icon">&lt;</span><span>在 Python 中检查一个数是不是另一个数的整数次幂</span></a>
                 
             </div>
 
             <div class="right">
                 
-                    <a href="numeric/4.html"><span>一文精通 Python 中的数值类型</span><span class="icon">&gt;</span></a>
+                    <a href="30.html"><span>在 Python 中检查一个数字是否是间谍数(spy number)</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>
