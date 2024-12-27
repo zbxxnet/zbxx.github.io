@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python 动手练：字符串 1 &#8212; Python教程</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic_mod.css?v=9b2032db" />
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/petite-vue.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Python 动手练：字符串 2" href="46.html" />
+    <link rel="prev" title="Python 动手练：f-strings 格式化字符串" href="38.html" /> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
+  </head><body data-dark_mode_code_blocks="true">
+
+<div id="top_nav">
+    
+
+    <nav>
+        
+            
+        
+
+        <p id="toggle_sidebar">
+            <a href="#" title="Toggle sidebar">|||</a>
+        </p>
+        <h1><a href="../index.html" title="Go to homepage">Python教程</a></h1>
+
+        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
+    <template v-if="mode == 'light'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'dark'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'darkest'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+</a>
+
+<script>
+(function() {
+    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
+
+    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+    if (initialMode) {
+        // Make sure the value in local storage is valid
+        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
+            initialMode = 'light'
+            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+        }
+    } else {
+        // Check if the client prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            initialMode = 'dark'
+        } else {
+            initialMode = 'light'
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    }
+
+    document.documentElement.dataset.mode = initialMode
+
+    PetiteVue.createApp({
+        'mode': initialMode,
+        handleClick() {
+            let currentMode = this.mode
+
+            if (currentMode == 'light') {
+                this.mode = 'dark'
+            } else if (currentMode == 'dark') {
+                this.mode = 'darkest'
+            } else if (currentMode == 'darkest') {
+                this.mode = 'light'
+            }
+
+            document.documentElement.dataset.mode = this.mode
+            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
+
+            console.log(this.mode)
+        }
+    }).mount('#mode_toggle')
+})()
+</script>
+            <p class="mobile_search_link">
+                <a href="../search.html" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
+                    </svg>
+                </a>
+            </p>
+        
+
+        <div class="searchbox_wrapper">
+            
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="提交" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numeric.html">Python 数值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Python 运算</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../strings.html">Python 字符串</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="25.html">一文掌握在 Python 中将字符串转换为浮点数或整数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26.html">Python 程序统计字符串中每个单词的出现次数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16.html">一文了解 Python 中的转义字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">一文搞懂 Python 中的字节字符串</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.html">一文了解 Python 中 find() 和 index() 之间的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="38.html">Python 动手练：f-strings 格式化字符串</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python 动手练：字符串 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="46.html">Python 动手练：字符串 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="47.html">Python 动手练：字符串 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../list.html">Python 列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dict.html">Python 字典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../set.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control.html">Python 流程控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file.html">Python 文件操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module.html">Python 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oop.html">Python 面向对象编程</a></li>
+</ul>
+
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="python-1">
+<h1>Python 动手练：字符串 1<a class="headerlink" href="#python-1" title="Link to this heading">¶</a></h1>
+<p>字符串是 Python 中最常用的数据类型。我们可以使用引号( ' 或 &quot; )来创建字符串。</p>
+<p>Python 访问字符串，可以利用索引号，使用方括号 [] 来截取字符串。</p>
+<p><strong>建议：根据提示完成练习后，再参考文末示例代码。</strong></p>
+<section id="id1">
+<h2>练习 1：创建字符串<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，从一个字符串提取第一个、中间和最后一个字符组成的新的字符串。</p>
+<p>例：</p>
+<p>s1=&quot;abcde&quot;</p>
+<p>输出：</p>
+<p>s2=&quot;ace&quot;</p>
+<p><strong>提示</strong></p>
+<p>字符串索引以 0 开头。</p>
+<p>使用字符串索引获取字符串的第一个和最后一个字符。</p>
+<p>通过将字符串长度整除 2 来获取中间字符的索引。</p>
+</section>
+<section id="id2">
+<h2>练习 2：提取字符串中间三个字符<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，从一个字符串提取中间三个字符组成的新的字符串。</p>
+<p>例：</p>
+<p>s1=&quot;abcde&quot;</p>
+<p>输出：</p>
+<p>s2=&quot;bcd&quot;</p>
+<p><strong>提示</strong></p>
+<p>通过将字符串长度整除 2 来获取中间字符的索引 m。</p>
+<p>使用字符串切片[m-1:m+2]来提取中间三个字符。</p>
+</section>
+<section id="id3">
+<h2>练习 3：在字符串中间插入字符<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，在一个字符串中间位置插入一个字符组成的新的字符串。</p>
+<p>例：</p>
+<p>s1=&quot;abcd&quot;</p>
+<p>s2=&quot;e&quot;</p>
+<p>输出：</p>
+<p>s3=&quot;abecd&quot;</p>
+<p><strong>提示</strong></p>
+<p>通过将字符串长度整除 2 来获取中间字符的索引 m。</p>
+<p>利用索引号 m，分解截取字符串前半部分和后半部分。</p>
+<p>截取的的字符串与新插入的字符连接。</p>
+</section>
+<section id="id4">
+<h2>练习 4：字符串排序<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>给定字符串包含小写和大写字母。编写一个程序来排列字符串，使所有小写字母排在前面。</p>
+<p>例：
+s1 = &quot;Zbxx&quot;</p>
+<p>输出</p>
+<p>s2 = &quot;bxxZ&quot;</p>
+<p><strong>提示</strong></p>
+<p>创建两个列表 m1，m2。</p>
+<p>从字符串中迭代每个字符，并使用 islower()字符串函数检查当前字符是小写还是大写。</p>
+<p>如果字符为小写，则将其添加到列表 m1，否则将其添加到列表 m2。</p>
+<p>连接两个列表并转换为字符串。</p>
+</section>
+<section id="id5">
+<h2>练习 5：统计字符串中的字母、数字、特殊符号<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>s1 = &quot;^34Ggerg&#64;#\$4v#$3&quot;</p>
+<p>结果：</p>
+<p>字符：6
+数字：4
+特殊符号：6</p>
+<p><strong>提示</strong></p>
+<p>isalpha()：检查字符串/字符是否为字母。</p>
+<p>isdigit()：检查字符串/字符是否为数字。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 1</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;初始字符串：&quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mi</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">s1</span><span class="p">[</span><span class="n">mi</span><span class="p">]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">s1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;新字符串：&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 2</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;初始字符串：&quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;新字符串：&quot;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 3</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;e&#39;</span>
+<span class="n">mi</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">temp1</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[:</span><span class="n">mi</span><span class="p">]</span>
+<span class="n">temp2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="n">mi</span><span class="p">:]</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="n">temp1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span><span class="n">temp2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 4</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Zbxx&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;初始字符串：&quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+        <span class="n">m1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">m2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;结果：&#39;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 5</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;^34Ggerg@#$4v#$3&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;初始字符串：&quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="n">char_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">digit_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">symbol_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+        <span class="n">char_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">digit_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">symbol_count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;字符：&quot;</span><span class="p">,</span> <span class="n">char_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;数字：&quot;</span><span class="p">,</span> <span class="n">digit_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;特殊符号：&quot;</span><span class="p">,</span> <span class="n">symbol_count</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</p>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Python 动手练：字符串 1</a><ul>
+<li><a class="reference internal" href="#id1">练习 1：创建字符串</a></li>
+<li><a class="reference internal" href="#id2">练习 2：提取字符串中间三个字符</a></li>
+<li><a class="reference internal" href="#id3">练习 3：在字符串中间插入字符</a></li>
+<li><a class="reference internal" href="#id4">练习 4：字符串排序</a></li>
+<li><a class="reference internal" href="#id5">练习 5：统计字符串中的字母、数字、特殊符号</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
+
+      <div class="clearer"></div>
+    </div>
+    <div class="button_nav_wrapper">
+        <div class="button_nav">
+            <div class="left">
+                
+                <a href="38.html">
+                    <span class="icon">&lt;</span><span>Python 动手练：f-strings 格式化字符串</span></a>
+                
+            </div>
+
+            <div class="right">
+                
+                    <a href="46.html"><span>Python 动手练：字符串 2</span><span class="icon">&gt;</span></a>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" role="contentinfo">
+    &#169; 版权所有 2024, zbxx.net.
+      由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3创建。
+    </div>
+
+<p id="theme_credit">Power By <a href="https://www.pythonhome.cn">Python之家</a></p>
+  </body>
+</html>

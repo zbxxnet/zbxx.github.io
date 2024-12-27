@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 流程控制 &#8212; Python教程</title>
+    <title>Python 技巧 &#8212; Python教程</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
     <script src="_static/documentation_options.js?v=7d86a446"></script>
@@ -15,9 +15,7 @@
     <script src="_static/js/theme.js"></script>
     <script src="_static/js/petite-vue.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="一文精通 Python 中的条件语句" href="control/5.html" />
-    <link rel="prev" title="Python 动手练：集合" href="set/39.html" /> 
+    <link rel="search" title="搜索" href="search.html" /> 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
   </head><body data-dark_mode_code_blocks="true">
 
@@ -120,7 +118,7 @@
 
     
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper"><ul class="current">
+        <div class="sphinxsidebarwrapper"><ul>
 <li class="toctree-l1"><a class="reference internal" href="tips.html">Python 技巧</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numeric.html">Python 数值</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operation.html">Python 运算</a></li>
@@ -128,16 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="list.html">Python 列表</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dict.html">Python 字典</a></li>
 <li class="toctree-l1"><a class="reference internal" href="set.html">Python 技巧</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">Python 流程控制</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">Python 文件操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module.html">Python 模块</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oop.html">Python 面向对象编程</a></li>
@@ -153,54 +142,15 @@
           <div class="body" role="main">
             
   <section id="python">
-<h1>Python 流程控制<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
+<h1>Python 技巧<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if">if 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-else">if-else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#id1">if 语句嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-elif">if-elif 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id1">通过检查 python 版本来导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id2">按其他条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id3">通过异常处理导入模块</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#for-else">for 循环使用 else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#while-else">while 循环使用 else 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#match-case">match-case 语法格式：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id1">match-case 实例：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id2">match-case 匹配类型和结构</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#for">for 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#while">while 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id1">for 循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id2">while 循环嵌套</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id1">练习 1：循环输出自然数 1~10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id2">练习 2：计算数字的总和</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id3">练习 3：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id4">练习 4：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id5">练习 5：计算数字的位数</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id1">练习 1：素数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id2">练习 2：斐波那契数列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id3">练习 3：数的阶乘</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id4">练习 4：反转给定整数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id5">练习 5：输出以下图形</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuptle/42.html">Python 动手练：元组</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuptle/42.html#id1">练习 1：反转元组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuptle/42.html#id2">练习 2：交换元组的元素</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuptle/42.html#id3">练习 3：从元组创建新元组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuptle/42.html#id4">练习 4：元组中某个元素的数量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuptle/42.html#id5">练习 5：修改元组</a></li>
 </ul>
 </li>
 </ul>
@@ -220,14 +170,9 @@
         <div class="button_nav">
             <div class="left">
                 
-                <a href="set/39.html">
-                    <span class="icon">&lt;</span><span>Python 动手练：集合</span></a>
-                
             </div>
 
             <div class="right">
-                
-                    <a href="control/5.html"><span>一文精通 Python 中的条件语句</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>

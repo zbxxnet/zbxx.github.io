@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN" data-content_root="./">
+<html lang="zh-CN" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 流程控制 &#8212; Python教程</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <script src="_static/documentation_options.js?v=7d86a446"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/translations.js?v=beaddf03"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="一文精通 Python 中的条件语句" href="control/5.html" />
-    <link rel="prev" title="Python 动手练：集合" href="set/39.html" /> 
+    <title>Python 动手练：元组 &#8212; Python教程</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic_mod.css?v=9b2032db" />
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/petite-vue.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
   </head><body data-dark_mode_code_blocks="true">
 
@@ -32,7 +30,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">Python教程</a></h1>
+        <h1><a href="../index.html" title="Go to homepage">Python教程</a></h1>
 
         <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
     <template v-if="mode == 'light'">
@@ -94,7 +92,7 @@
 })()
 </script>
             <p class="mobile_search_link">
-                <a href="search.html" title="Search">
+                <a href="../search.html" title="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
                         <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
                     </svg>
@@ -107,7 +105,7 @@
 <search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">快速搜索</h3>
     <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="提交" />
     </form>
@@ -120,27 +118,18 @@
 
     
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Python 技巧</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numeric.html">Python 数值</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operation.html">Python 运算</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Python 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">Python 列表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dict.html">Python 字典</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set.html">Python 技巧</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">Python 文件操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module.html">Python 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop.html">Python 面向对象编程</a></li>
+        <div class="sphinxsidebarwrapper"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numeric.html">Python 数值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Python 运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strings.html">Python 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list.html">Python 列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dict.html">Python 字典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../set.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control.html">Python 流程控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file.html">Python 文件操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module.html">Python 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oop.html">Python 面向对象编程</a></li>
 </ul>
 
         </div>
@@ -153,58 +142,98 @@
           <div class="body" role="main">
             
   <section id="python">
-<h1>Python 流程控制<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if">if 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-else">if-else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#id1">if 语句嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-elif">if-elif 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id1">通过检查 python 版本来导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id2">按其他条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id3">通过异常处理导入模块</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#for-else">for 循环使用 else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#while-else">while 循环使用 else 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#match-case">match-case 语法格式：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id1">match-case 实例：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id2">match-case 匹配类型和结构</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#for">for 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#while">while 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id1">for 循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id2">while 循环嵌套</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id1">练习 1：循环输出自然数 1~10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id2">练习 2：计算数字的总和</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id3">练习 3：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id4">练习 4：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id5">练习 5：计算数字的位数</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id1">练习 1：素数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id2">练习 2：斐波那契数列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id3">练习 3：数的阶乘</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id4">练习 4：反转给定整数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id5">练习 5：输出以下图形</a></li>
-</ul>
-</li>
-</ul>
+<h1>Python 动手练：元组<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
+<p>Python 的元组与列表类似，不同之处在于元组的元素不能修改。</p>
+<p>元组使用小括号 ( )，列表使用方括号 [ ]。</p>
+<p>元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。</p>
+<p><strong>建议：根据提示完成练习后，再参考文末示例代码。</strong></p>
+<section id="id1">
+<h2>练习 1：反转元组<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，将元组中的元素反转输出。</p>
+<p>例：</p>
+<p>tuple1 = (10, 20, 30, 40, 50)</p>
+<p>输出：</p>
+<p>(50, 40, 30, 20, 10)</p>
+<p><strong>提示</strong></p>
+<p>使用元组切片来反转给定的元组。[::-1]</p>
+</section>
+<section id="id2">
+<h2>练习 2：交换元组的元素<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，交换两个元组中的元素。</p>
+<p>例：</p>
+<p>tuple1 = (1, 2)</p>
+<p>tuple2 = (8, 9)</p>
+<p>输出：</p>
+<p>tuple1 = (8, 9)</p>
+<p>tuple2 = (1, 2)</p>
+<p><strong>提示</strong></p>
+<p>在 Python 中使用变量交换方法完成。</p>
+<p>x, y = y, x</p>
+</section>
+<section id="id3">
+<h2>练习 3：从元组创建新元组<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，从一个元组提取部分元素创建新元组。</p>
+<p>例：</p>
+<p>tuple1 = (10, 20, 30, 40, 50)</p>
+<p>输出：</p>
+<p>(20, 30)</p>
+<p><strong>提示</strong></p>
+<p>使用元组切片来创建元组。</p>
+</section>
+<section id="id4">
+<h2>练习 4：元组中某个元素的数量<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>编写一个程序，返回两个集合中不重复的元素集合。</p>
+<p>例：如下元组，包含几个 20。</p>
+<p>tuple1 = (10, 20, 30, 20, 50)</p>
+<p>输出：</p>
+<p>2</p>
+<p><strong>提示</strong></p>
+<p>使用元组的 count() 方法。</p>
+</section>
+<section id="id5">
+<h2>练习 5：修改元组<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>给定是一个嵌套元组。编写一个程序，将元组中列表的第一项 （1） 修改为 100。</p>
+<p>例：</p>
+<p>tuple1 = (11, [1, 2], 22)</p>
+<p>输出：</p>
+<p>(11, [100, 2], 22)</p>
+<p><strong>提示</strong></p>
+<p>使用索引查找指定的项目，并使用赋值运算符对其进行修改。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 1</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="n">tuple1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+</pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 2</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">tuple2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">tuple1</span><span class="p">,</span> <span class="n">tuple2</span> <span class="o">=</span> <span class="n">tuple2</span><span class="p">,</span> <span class="n">tuple1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 3</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">tuple2</span> <span class="o">=</span> <span class="n">tuple1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 4</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 5</span>
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">tuple1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</p>
+</div></blockquote>
+</section>
 </section>
 
 
@@ -213,6 +242,27 @@
         </div>
       </div>
     
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Python 动手练：元组</a><ul>
+<li><a class="reference internal" href="#id1">练习 1：反转元组</a></li>
+<li><a class="reference internal" href="#id2">练习 2：交换元组的元素</a></li>
+<li><a class="reference internal" href="#id3">练习 3：从元组创建新元组</a></li>
+<li><a class="reference internal" href="#id4">练习 4：元组中某个元素的数量</a></li>
+<li><a class="reference internal" href="#id5">练习 5：修改元组</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
 
       <div class="clearer"></div>
     </div>
@@ -220,14 +270,9 @@
         <div class="button_nav">
             <div class="left">
                 
-                <a href="set/39.html">
-                    <span class="icon">&lt;</span><span>Python 动手练：集合</span></a>
-                
             </div>
 
             <div class="right">
-                
-                    <a href="control/5.html"><span>一文精通 Python 中的条件语句</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>

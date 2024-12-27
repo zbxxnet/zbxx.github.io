@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN" data-content_root="./">
+<html lang="zh-CN" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 流程控制 &#8212; Python教程</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <script src="_static/documentation_options.js?v=7d86a446"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/translations.js?v=beaddf03"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="一文精通 Python 中的条件语句" href="control/5.html" />
-    <link rel="prev" title="Python 动手练：集合" href="set/39.html" /> 
+    <title>Python 动手练：自定义函数 &#8212; Python教程</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic_mod.css?v=9b2032db" />
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/petite-vue.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Python 数值" href="../numeric.html" />
+    <link rel="prev" title="一文了解 Python 中的下划线 “_”" href="12.html" /> 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
   </head><body data-dark_mode_code_blocks="true">
 
@@ -32,7 +32,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">Python教程</a></h1>
+        <h1><a href="../index.html" title="Go to homepage">Python教程</a></h1>
 
         <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
     <template v-if="mode == 'light'">
@@ -94,7 +94,7 @@
 })()
 </script>
             <p class="mobile_search_link">
-                <a href="search.html" title="Search">
+                <a href="../search.html" title="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
                         <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
                     </svg>
@@ -107,7 +107,7 @@
 <search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">快速搜索</h3>
     <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="提交" />
     </form>
@@ -121,26 +121,21 @@
     
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Python 技巧</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numeric.html">Python 数值</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operation.html">Python 运算</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Python 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">Python 列表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dict.html">Python 字典</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set.html">Python 技巧</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tips.html">Python 技巧</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="12.html">一文了解 Python 中的下划线 “_”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python 动手练：自定义函数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">Python 文件操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module.html">Python 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop.html">Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numeric.html">Python 数值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Python 运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strings.html">Python 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list.html">Python 列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dict.html">Python 字典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../set.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control.html">Python 流程控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file.html">Python 文件操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module.html">Python 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oop.html">Python 面向对象编程</a></li>
 </ul>
 
         </div>
@@ -153,58 +148,104 @@
           <div class="body" role="main">
             
   <section id="python">
-<h1>Python 流程控制<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="control/5.html">一文精通 Python 中的条件语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if">if 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-else">if-else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#id1">if 语句嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/5.html#if-elif">if-elif 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/8.html">一文了解 Python 中按条件导入模块</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id1">通过检查 python 版本来导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id2">按其他条件导入模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/8.html#id3">通过异常处理导入模块</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/9.html">一文了解 Python 中带有 else 的循环语句 for-else/while-else</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#for-else">for 循环使用 else 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/9.html#while-else">while 循环使用 else 语句</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/13.html">一文了解 Python 中的新功能：match-case 多分支选择语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#match-case">match-case 语法格式：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id1">match-case 实例：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/13.html#id2">match-case 匹配类型和结构</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/14.html">一文了解 Python 中的循环嵌套</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#for">for 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#while">while 循环</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id1">for 循环嵌套</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/14.html#id2">while 循环嵌套</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/40.html">Python 动手练：循环语句</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id1">练习 1：循环输出自然数 1~10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id2">练习 2：计算数字的总和</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id3">练习 3：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id4">练习 4：输出以下图形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/40.html#id5">练习 5：计算数字的位数</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="control/41.html">Python 动手练：循环语句2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id1">练习 1：素数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id2">练习 2：斐波那契数列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id3">练习 3：数的阶乘</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id4">练习 4：反转给定整数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="control/41.html#id5">练习 5：输出以下图形</a></li>
-</ul>
-</li>
-</ul>
+<h1>Python 动手练：自定义函数<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
+<p>此练习涵盖有关函数创建、函数调用、函数参数等问题。如果你有更好的替代方案，请在下面的评论中告诉我们，帮助其他 Python 初学者。</p>
+<p><strong>建议：根据提示完成练习后，再参考文末示例代码。</strong></p>
+<section id="id1">
+<h2>练习 1：创建自定义函数<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>编写一个程序来创建接受两个参数（name 和 age）的函数，并打印输出它们的值。</p>
+<p><strong>提示</strong></p>
+<p>使用关键字 def 和函数名、参数，创建自定义函数。</p>
+<p>使用 print（） 函数打印输出。</p>
+<p>通过传递 name 和 age 的值来调用函数。</p>
+</section>
+<section id="id2">
+<h2>练习 2：创建可变长度参数的函数<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>编写一个程序来创建函数，可以接受可变长度的参数。这样我们就可以将任意数量的参数传递给这个函数，并且函数能够正确处理它们。</p>
+<p>例：</p>
+<p>编写一个求和函数，可以传递多个参数，计算多个数的和。</p>
+<p>mysum(10,20)</p>
+<p>mysum(10,20,30)</p>
+<p><strong>提示</strong></p>
+<p>如果函数接受可变长度的参数，可以使用 *args 作为参数。可以将任意数量的参数传递给此函数。在函数内部，所有传递进来的这些值都以元组的形式存在。</p>
+<p>使用 for 循环遍历元组，累加求和。</p>
+</section>
+<section id="id3">
+<h2>练习 3：自定义函数返回多个值<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>编写一个程序来创建可以接受两个参数的函数，计算两个参数的加法和减法并同时返回加法和减法的结果。</p>
+<p>例：</p>
+<p>函数调用：cal(20,10)</p>
+<p>输出：</p>
+<p>(30, 10)</p>
+<p><strong>提示</strong></p>
+<p>使用 return 返回数值。</p>
+<p>要从函数返回多个值，使用逗号分隔。</p>
+</section>
+<section id="id4">
+<h2>练习 4：创建具有默认参数的函数<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>编写程序创建 grade() 函数。</p>
+<p>函数接受学生的姓名和成绩等级，并同时输出。
+如果函数调用时中缺少等级，则使用默认值“合格”。</p>
+<p>例：</p>
+<p>grade(&quot;张三&quot;,&quot;优秀&quot;) #输出：张三的成绩优秀</p>
+<p>grade(&quot;李四&quot;) #输出：李四的成绩合格</p>
+<p><strong>提示</strong></p>
+<p>调用函数时不传递参数，则调用默认值。</p>
+<p>我们可以自定义函数时使用赋值运算符 = 为函数中的参数赋值。</p>
+</section>
+<section id="id5">
+<h2>练习 5：创建递归函数<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>编写一个程序来创建递归函数来计算从 1 到 n 的数字之和。</p>
+<p>递归函数是一次又一次调用自身的函数。</p>
+<p><strong>提示</strong></p>
+<p>使用索引查找指定的项目，并使用赋值运算符对其进行修改。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 1</span>
+<span class="c1">#自定义函数</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="c1">#调用函数</span>
+<span class="n">func1</span><span class="p">(</span><span class="s2">&quot;刘德华&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 2</span>
+<span class="k">def</span> <span class="nf">mysum</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="o">+</span><span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">mysum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">mysum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 3</span>
+<span class="k">def</span> <span class="nf">cal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="n">n</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">cal</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 4</span>
+<span class="k">def</span> <span class="nf">grade</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">gra</span><span class="o">=</span><span class="s2">&quot;合格&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">的成绩</span><span class="si">{</span><span class="n">gra</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">grade</span><span class="p">(</span><span class="s2">&quot;张三&quot;</span><span class="p">,</span><span class="s2">&quot;优秀&quot;</span><span class="p">)</span>
+<span class="n">grade</span><span class="p">(</span><span class="s2">&quot;李四&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习 5</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</p>
+</div></blockquote>
+</section>
 </section>
 
 
@@ -213,6 +254,27 @@
         </div>
       </div>
     
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Python 动手练：自定义函数</a><ul>
+<li><a class="reference internal" href="#id1">练习 1：创建自定义函数</a></li>
+<li><a class="reference internal" href="#id2">练习 2：创建可变长度参数的函数</a></li>
+<li><a class="reference internal" href="#id3">练习 3：自定义函数返回多个值</a></li>
+<li><a class="reference internal" href="#id4">练习 4：创建具有默认参数的函数</a></li>
+<li><a class="reference internal" href="#id5">练习 5：创建递归函数</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
 
       <div class="clearer"></div>
     </div>
@@ -220,14 +282,14 @@
         <div class="button_nav">
             <div class="left">
                 
-                <a href="set/39.html">
-                    <span class="icon">&lt;</span><span>Python 动手练：集合</span></a>
+                <a href="12.html">
+                    <span class="icon">&lt;</span><span>一文了解 Python 中的下划线 “_”</span></a>
                 
             </div>
 
             <div class="right">
                 
-                    <a href="control/5.html"><span>一文精通 Python 中的条件语句</span><span class="icon">&gt;</span></a>
+                    <a href="../numeric.html"><span>Python 数值</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>
