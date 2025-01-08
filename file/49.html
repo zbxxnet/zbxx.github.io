@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN" data-content_root="./">
+<html lang="zh-CN" data-content_root="../">
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Python 文件操作 &#8212; Python教程</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <script src="_static/documentation_options.js?v=7d86a446"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/translations.js?v=beaddf03"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="一文了解 Python 的临时文件模块" href="file/6.html" />
-    <link rel="prev" title="Python 动手练：循环语句2" href="control/41.html" /> 
+    <title>Python 初学者练习：打开文件方法详解 &#8212; Python教程</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic_mod.css?v=9b2032db" />
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/petite-vue.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Python 初学者练习：删除文件和文件夹" href="50.html" />
+    <link rel="prev" title="Python 初学者练习：创建文件方法详解" href="48.html" /> 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9545799325382952"  crossorigin="anonymous"></script>
   </head><body data-dark_mode_code_blocks="true">
 
@@ -31,7 +31,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">Python教程</a></h1>
+        <h1><a href="../index.html" title="Go to homepage">Python教程</a></h1>
 
         <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
     <template v-if="mode == 'light'">
@@ -93,7 +93,7 @@
 })()
 </script>
             <p class="mobile_search_link">
-                <a href="search.html" title="Search">
+                <a href="../search.html" title="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
                         <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
                     </svg>
@@ -106,7 +106,7 @@
 <search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">快速搜索</h3>
     <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="提交" />
     </form>
@@ -120,28 +120,28 @@
     
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Python 技巧</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numeric.html">Python 数值</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operation.html">Python 运算</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Python 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">Python 列表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dict.html">Python 字典</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set.html">Python 技巧</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tuptle.html">Python 技巧</a></li>
-<li class="toctree-l1"><a class="reference internal" href="control.html">Python 流程控制</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python 文件操作</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/6.html">一文了解 Python 的临时文件模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html">使用一个Python 文件来运行另一个 Python 文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/48.html">Python 初学者练习：创建文件方法详解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html">Python 初学者练习：打开文件方法详解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html">Python 初学者练习：删除文件和文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/51.html">Python 初学者练习：文件读取方法详解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html">Python 初学者练习：移动文件或文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/53.html">Python 初学者练习：重命名文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numeric.html">Python 数值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operation.html">Python 运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strings.html">Python 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list.html">Python 列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dict.html">Python 字典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../set.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuptle.html">Python 技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control.html">Python 流程控制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../file.html">Python 文件操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="6.html">一文了解 Python 的临时文件模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="27.html">使用一个Python 文件来运行另一个 Python 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="48.html">Python 初学者练习：创建文件方法详解</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python 初学者练习：打开文件方法详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="50.html">Python 初学者练习：删除文件和文件夹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="51.html">Python 初学者练习：文件读取方法详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="52.html">Python 初学者练习：移动文件或文件夹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="53.html">Python 初学者练习：重命名文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module.html">Python 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop.html">Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module.html">Python 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oop.html">Python 面向对象编程</a></li>
 </ul>
 
         </div>
@@ -154,71 +154,89 @@
           <div class="body" role="main">
             
   <section id="python">
-<h1>Python 文件操作<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="file/6.html">一文了解 Python 的临时文件模块</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/6.html#id1">创建临时文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/6.html#id2">创建临时文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/6.html#id3">读取和写入临时文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/27.html">使用一个Python 文件来运行另一个 Python 文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html#import">使用 import 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html#subprocess">使用 subprocess 模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html#exec">使用 exec() 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html#os-system">使用 os.system() 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/27.html#importlib">使用 importlib 模块</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/48.html">Python 初学者练习：创建文件方法详解</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/48.html#id1">创建空文本文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/48.html#id2">在特定目录中创建文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/48.html#id3">如果文件不存在，则创建文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/48.html#id4">使用日期时间创建文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/49.html">Python 初学者练习：打开文件方法详解</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id1">在 Python 中打开文件的步骤</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id2">在只读模式下打开文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id3">使用相对路径打开文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id4">在写入模式下打开文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id5">在追加模式下打开文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/49.html#id6">关闭文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/50.html">Python 初学者练习：删除文件和文件夹</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#os-remove">使用 os.remove() 函数删除文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#id1">从目录中删除所有文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#os-rmdir">使用 os.rmdir() 删除空文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#shutil">使用 shutil 模块删除非空文件夹</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#id2">通过模式匹配删除具有特定扩展名的文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#id3">删除特定字符串开头的文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/50.html#id4">删除包含特定字母的文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/51.html">Python 初学者练习：文件读取方法详解</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/51.html#id1">Python中文件打开模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/51.html#id2">Python中读取文本文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/52.html">Python 初学者练习：移动文件或文件夹</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html#id1">移动单个文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html#id2">移动文件并重命名</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html#id3">从文件夹中移动所有文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html#id4">移动指定的多个文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/52.html#id5">使用通配符移动匹配的文件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file/53.html">Python 初学者练习：重命名文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file/53.html#id1">在 Python 中重命名文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/53.html#id2">在 Python 中重命名多个文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/53.html#id3">批量重命名文件夹中的部分文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file/53.html#id4">重命名文件的扩展名</a></li>
-</ul>
-</li>
-</ul>
+<h1>Python 初学者练习：打开文件方法详解<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
+<p>本教程中，你将学习如何在 Python 中打开文件。数据是以文件的形式存储，例如文本、csv 和二进制文件。为了从这些文件中提取数据，Python 可以使用内置函数来打开文件，然后读取和写入文件的内容。</p>
+<section id="id1">
+<h2>在 Python 中打开文件的步骤<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<ol class="simple">
+<li><p>确实文件的路径</p></li>
+</ol>
+<p>可以使用相对路径和绝对路径打开文件。路径是文件的位置。绝对路径包含文件的完整目录列表。相对路径包含当前目录，然后包含文件名。</p>
+<ol class="simple">
+<li><p>确定访问模式</p></li>
+</ol>
+<p>访问模式指定要对文件执行的操作，例如读取或写入。要打开和读取文件，请使用只读模式r。要打开文件进行写入，请使用读写模式w。</p>
+<ol class="simple">
+<li><p>将文件路径和访问模式加入open()函数</p></li>
+</ol>
+<p>fp=open(r&quot;File_Name&quot;, &quot;Access_Mode&quot;)</p>
+<p>例如，要打开并读取：fp=open('sample.txt', 'r')</p>
+<ol class="simple">
+<li><p>从文件中读取内容</p></li>
+</ol>
+<p>可以使用read()、readline()、readlines()等函数读取文件内容。</p>
+<ol class="simple">
+<li><p>将内容写入文件</p></li>
+</ol>
+<p>如果在写入模式下打开了文件，则可以使用write()、writeine()等函数向文件写入或追加文本</p>
+<ol class="simple">
+<li><p>完成操作后关闭文件</p></li>
+</ol>
+<p>我们需要确保在完成文件操作后将文件关闭。</p>
+<p>fp.close()</p>
+</section>
+<section id="id2">
+<h2>在只读模式下打开文件<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>以下代码演示如何在 Python 中打开文本文件进行读取。在此示例中，我们使用绝对路径打开一个文件。绝对路径包含我们需要访问的文件或文件夹的整个路径。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\temp\files\abc.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1">#读取文件内容并输出</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="c1">#读取完毕后要关闭文件</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 </div>
+</section>
+<section id="id3">
+<h2>使用相对路径打开文件<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>相对路径是从当前目录开始的路径，然后使用该目录和文件名查找文件。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">fp</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;abc.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;文件不存在，请检查路径！&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果我们尝试打开上述路径中的文件不存在，那么将返回FileNotFoundError。可以使用try-except进行处理。</p>
+<p>比如：文件绝对路径是C:\temp\files\abc.txt，python脚本文件位于C:\temp，在当前路径访问abc.txt会返回错误。</p>
+</section>
+<section id="id4">
+<h2>在写入模式下打开文件<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>我们可以使用 open() 函数并并以 w 作为访问模式打开一个文件，将新内容写入文件。光标将放置在文件的开头。如果文件已经存在，文件中以前的所有内容都将被删除并将新内容添加到文件中。如果文件不存在，会自动创建新文件。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;abc.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="c1">#写入</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;欢迎&quot;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>在追加模式下打开文件<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>我们可以使用函数在文件末尾增加一些内容，方法是使用访问模式a。光标将放置在文件的末尾，新内容将添加到末尾。</p>
+<p>此模式与写入模式之间的区别在于，在此模式下不会影响文件原有的内容。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;abc.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;这是使用追加模式添加的内容。&quot;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;abc.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>关闭文件<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<p>我们需要确保在完成文件操作后将文件正确关闭，如果在写入或读写模式下打开文件，关闭文件及时刷新数据。</p>
+<p><strong>文章创作不易，如果您喜欢这篇文章，请关注、点赞并分享给朋友。如有意见和建议，请在评论中反馈！</strong></p>
+</section>
 </section>
 
 
@@ -227,6 +245,28 @@
         </div>
       </div>
     
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">Python 初学者练习：打开文件方法详解</a><ul>
+<li><a class="reference internal" href="#id1">在 Python 中打开文件的步骤</a></li>
+<li><a class="reference internal" href="#id2">在只读模式下打开文件</a></li>
+<li><a class="reference internal" href="#id3">使用相对路径打开文件</a></li>
+<li><a class="reference internal" href="#id4">在写入模式下打开文件</a></li>
+<li><a class="reference internal" href="#id5">在追加模式下打开文件</a></li>
+<li><a class="reference internal" href="#id6">关闭文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
 
       <div class="clearer"></div>
     </div>
@@ -234,14 +274,14 @@
         <div class="button_nav">
             <div class="left">
                 
-                <a href="control/41.html">
-                    <span class="icon">&lt;</span><span>Python 动手练：循环语句2</span></a>
+                <a href="48.html">
+                    <span class="icon">&lt;</span><span>Python 初学者练习：创建文件方法详解</span></a>
                 
             </div>
 
             <div class="right">
                 
-                    <a href="file/6.html"><span>一文了解 Python 的临时文件模块</span><span class="icon">&gt;</span></a>
+                    <a href="50.html"><span>Python 初学者练习：删除文件和文件夹</span><span class="icon">&gt;</span></a>
                 
             </div>
         </div>
